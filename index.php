@@ -10,7 +10,6 @@
         include_once __DIR__.'/page/form.html'; 
     } else {
         include_once __DIR__.'/page/header.html'; 
-        
     }
     include __DIR__ . '/inti.php';
     if (isset($_POST['Token'])) {

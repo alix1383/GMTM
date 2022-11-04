@@ -17,9 +17,7 @@ function UpdateToken(int $steamid)
 function ListToken()
 {
     $key = $_SESSION["Token"];
-
     $curl = curl_init();
-
     curl_setopt_array($curl, array(
         CURLOPT_URL => "https://api.steampowered.com/IGameServersService/GetAccountList/v1/?key=$key",
         CURLOPT_RETURNTRANSFER => true,
@@ -30,9 +28,7 @@ function ListToken()
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
     ));
-
     $response = json_decode(curl_exec($curl))->response->servers;
-
     curl_close($curl);
     return $response;
 }
@@ -64,15 +60,12 @@ function GenToken(string $memo)
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
     $response = json_decode(curl_exec($ch))->response->login_token;
     return $response;
-
 }
 
 function Is_ValidaApiKey($key)
 {
     $key = $key;
-
     $curl = curl_init();
-
     curl_setopt_array($curl, array(
         CURLOPT_URL => "https://api.steampowered.com/IGameServersService/GetAccountList/v1/?key=$key",
         CURLOPT_RETURNTRANSFER => true,
@@ -83,11 +76,8 @@ function Is_ValidaApiKey($key)
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
     ));
-
     $response = json_decode(curl_exec($curl))->response;
-
     curl_close($curl);
-    
     $retVal = ($response != null) ? true : false ;
     return $retVal;
 }

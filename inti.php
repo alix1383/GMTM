@@ -1,6 +1,7 @@
 <?php
 //! https://partner.steamgames.com/doc/webapi/IGameServersService
-error_reporting(0);
+// error_reporting(0);
+
 define('INC', __DIR__ . '/inc/');
 include INC . 'functions.php';
 
@@ -17,7 +18,7 @@ if (isset($_GET['gen'])) {
 }
 
 if (isset($_GET['memo'])) {
-    echo '<p class="text-center display-6 text-success">New Token Is: ' . GenToken($_GET['memo']) . '</p>';
+    echo '<p class="text-center display-6 text-success"> New Token Is: ' . GenToken($_GET['memo']) . '</p>';
 }
 
 if (isset($_GET['del'])) {

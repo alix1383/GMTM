@@ -1,9 +1,11 @@
 <?php
-if (isset($_GET['steamid']) && $_GET['steamid'] != null ) {
-    delToken($_GET['steamid']);
-    echo "the token was deleted successful!";
-} else {
-    echo "something went wrong!";
-    exit;
+if (! isset($_POST['Token'])) {
+    die('something went wrong!');
 }
-?>
+
+if (! isset($_GET['steamid'])) {
+    die('something went wrong!');
+}
+
+delToken($_GET['steamid']);
+echo "the token was deleted successful!";
