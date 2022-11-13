@@ -1,6 +1,6 @@
 name: Psalm Security Scan
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   psalm:
