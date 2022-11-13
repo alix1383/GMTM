@@ -1,0 +1,8 @@
+{
+    "config": {
+        "vendor-dir": "inc/vendor"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.5"
+    }
+}
