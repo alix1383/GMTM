@@ -2,6 +2,7 @@
 session_start(); 
 require __DIR__ . '/inti.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

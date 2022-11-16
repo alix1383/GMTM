@@ -2,20 +2,29 @@
 //! https://partner.steamgames.com/doc/webapi/IGameServersService
 // error_reporting(0);
 
-define('INC', __DIR__ . '/inc/');
-define('PAGE_TMPL_HTML', __DIR__ . '/Pages/Html/');
-define('PAGE_TMPL_PHP', __DIR__ . '/Pages/php/');
+define('ROOT',  __DIR__);
+define('INC', ROOT . '/inc/');
+define('PAGE_TMPL_HTML', ROOT . 'Pages/Html/');
+define('PAGE_TMPL_PHP', ROOT . 'Pages/php/');
+
+use Monolog\Level;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 require INC . 'vendor/autoload.php';
 require INC . 'Class.Rquest.php';
 
+// date("Y_m_d")
+
+
+$log = new Logger('Steam Game Server Token Manager');
+$log->pushHandler(new StreamHandler("./logs/".date("Y")."/".date("m")."/".date("d")."/" .date('H').".log", Level::Info));
+
 
 if (isset($_SESSION['Token'])) {
     $Request = new Request($_SESSION['Token']);
-    include_once PAGE_TMPL_HTML.'header.html'; 
+    include_once PAGE_TMPL_HTML . 'header.html';
 }
-
-
 
 if (isset($_GET['list'])) {
     require PAGE_TMPL_PHP . 'list.php';
@@ -31,6 +40,16 @@ if (isset($_GET['gen'])) {
 
 if (isset($_GET['memo'])) {
     echo '<p class="text-center display-6 text-success"> New Token Is: ' . $Request->GenToken($_GET['memo'])->login_token . '</p>';
+
+    $log->info('New Token',
+    [   'Api Key' => $_SESSION['Token'],
+        'Toekn Steam id' => $_GET['steamid'],
+        'Memo' => $_GET['memo'],
+        'New Token' => $Request->GenToken($_GET['memo'])->login_token,
+        'IP' => $_SERVER['REMOTE_ADDR'],
+        'HTTP_USER_AGENT' => $_SERVER['HTTP_USER_AGENT'],
+        'SERVER_PROTOCOL' => $_SERVER['SERVER_PROTOCOL'],
+    ]);
 }
 
 if (isset($_GET['del'])) {
