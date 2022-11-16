@@ -4,8 +4,8 @@
 
 define('ROOT',  __DIR__);
 define('INC', ROOT . '/inc/');
-define('PAGE_TMPL_HTML', ROOT . 'Pages/Html/');
-define('PAGE_TMPL_PHP', ROOT . 'Pages/php/');
+define('PAGE_TMPL_HTML', ROOT . '/Pages/Html/');
+define('PAGE_TMPL_PHP', ROOT . '/Pages/php/');
 
 use Monolog\Level;
 use Monolog\Logger;
