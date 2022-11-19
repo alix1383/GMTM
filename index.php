@@ -1,17 +1,19 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 require __DIR__ . '/inti.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php include PAGE_TMPL_HTML . 'head.html';?>
 </head>
+
 <body>
-    <?php 
-    if(! isset($_SESSION['Token'])) {
-        include_once PAGE_TMPL_HTML.'form.html'; 
+    <?php
+    if (! isset($_SESSION['Token'])) {
+        include_once PAGE_TMPL_HTML.'form.html';
     }
     if (isset($_POST['Token'])) {
         if (!strlen($_POST['Token']) == 32) {
@@ -28,7 +30,8 @@ require __DIR__ . '/inti.php';
         $_SESSION['Token'] =  $_POST['Token'];
         echo "<meta http-equiv='refresh' content='0'>";
         header('Location: ?list');
-        }
-    ?>
+    }
+?>
 </body>
+
 </html>

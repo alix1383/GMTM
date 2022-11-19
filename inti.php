@@ -1,8 +1,14 @@
 <?php
+
 //! https://partner.steamgames.com/doc/webapi/IGameServersService
 // error_reporting(0);
 
-define('ROOT',  __DIR__);
+$_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
+// $_COOKIE = filter_input_array(INPUT_COOKIE, FILTER_SANITIZE_SPECIAL_CHARS);
+$_SERVER = filter_input_array(INPUT_SERVER, FILTER_SANITIZE_SPECIAL_CHARS);
+
+define('ROOT', __DIR__);
 define('INC', ROOT . '/inc/');
 define('PAGE_TMPL_HTML', ROOT . '/Pages/Html/');
 define('PAGE_TMPL_PHP', ROOT . '/Pages/php/');
@@ -41,15 +47,17 @@ if (isset($_GET['gen'])) {
 if (isset($_GET['memo'])) {
     echo '<p class="text-center display-6 text-success"> New Token Is: ' . $Request->GenToken($_GET['memo'])->login_token . '</p>';
 
-    $log->info('New Token',
-    [   'Api Key' => $_SESSION['Token'],
-        'Toekn Steam id' => $_GET['steamid'],
-        'Memo' => $_GET['memo'],
-        'New Token' => $Request->GenToken($_GET['memo'])->login_token,
-        'IP' => $_SERVER['REMOTE_ADDR'],
-        'HTTP_USER_AGENT' => $_SERVER['HTTP_USER_AGENT'],
-        'SERVER_PROTOCOL' => $_SERVER['SERVER_PROTOCOL'],
-    ]);
+    $log->info(
+        'New Token',
+        [   'Api Key' => $_SESSION['Token'],
+            'Toekn Steam id' => $_GET['steamid'],
+            'Memo' => $_GET['memo'],
+            'New Token' => $Request->GenToken($_GET['memo'])->login_token,
+            'IP' => $_SERVER['REMOTE_ADDR'],
+            'HTTP_USER_AGENT' => $_SERVER['HTTP_USER_AGENT'],
+            'SERVER_PROTOCOL' => $_SERVER['SERVER_PROTOCOL'],
+        ]
+    );
 }
 
 if (isset($_GET['del'])) {

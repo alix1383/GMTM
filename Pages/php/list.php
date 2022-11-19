@@ -16,8 +16,8 @@
                 <th scope="row"><?php echo $key ?></th>
                 <td class="font-monospace"><?php echo $item->memo ?></td>
                 <td
-                    class="font-monospace <?php echo ($item->is_expired == 1 ? "text-bg-danger" : "text-bg-success") ?> ">
-                    <?php echo ($item->is_expired == 0 ? 'No' : 'Yes') ?></td>
+                    class="font-monospace <?php echo($item->is_expired == 1 ? "text-bg-danger" : "text-bg-success") ?> ">
+                    <?php echo($item->is_expired == 0 ? 'No' : 'Yes') ?></td>
                 <td class="font-monospace" id="<?php echo $key ?>"><?php echo $item->login_token ?></td>
                 <td class="col-2">
                     <button onclick="CopyToClipboard(<?php echo $key ?>)" class="p-m-1 btn btn-outline-dark"

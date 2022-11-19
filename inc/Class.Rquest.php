@@ -1,7 +1,9 @@
 <?php
+
 class Request
 {
-    private $Client, $Apikey;
+    private $Client;
+    private $Apikey;
     /**
      * __construct
      *
@@ -12,7 +14,6 @@ class Request
         $Client = new GuzzleHttp\Client();
         $this->Client = $Client;
         $this->Apikey = $Apikey;
-        
     }
 
     /**
@@ -23,12 +24,14 @@ class Request
     public function GetTokenList()
     {
         $res = $this->Client;
-        $result = $res->request('GET', "https://api.steampowered.com/IGameServersService/GetAccountList/v1/",
+        $result = $res->request(
+            'GET',
+            "https://api.steampowered.com/IGameServersService/GetAccountList/v1/",
             [
                 'query' => ['key' => $this->Apikey],
             ]
         );
-        
+
         return json_decode($result->getBody())->response->servers;
     }
 
@@ -41,7 +44,9 @@ class Request
     {
         try {
             $res = $this->Client;
-            $res->request('GET', "https://api.steampowered.com/IGameServersService/GetAccountList/v1/",
+            $res->request(
+                'GET',
+                "https://api.steampowered.com/IGameServersService/GetAccountList/v1/",
                 [
                     'query' => ['key' => $this->Apikey],
                 ]
@@ -60,7 +65,9 @@ class Request
     public function GenToken(string $Memo)
     {
         $res = $this->Client;
-        $result = $res->request('POST', "https://api.steampowered.com/IGameServersService/CreateAccount/v1/",
+        $result = $res->request(
+            'POST',
+            "https://api.steampowered.com/IGameServersService/CreateAccount/v1/",
             [
                 'query' => ['key' => $this->Apikey, 'appid' => 730, 'memo' => $Memo],
             ]
@@ -77,7 +84,9 @@ class Request
     public function ResetToken(int $Steamid)
     {
         $res = $this->Client;
-        $result = $res->request('POST', "https://api.steampowered.com/IGameServersService/ResetLoginToken/v1/",
+        $result = $res->request(
+            'POST',
+            "https://api.steampowered.com/IGameServersService/ResetLoginToken/v1/",
             [
                 'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
             ]
@@ -94,7 +103,9 @@ class Request
     public function DeleteToken(int $Steamid)
     {
         $res = $this->Client;
-        $res->request('POST', "https://api.steampowered.com/IGameServersService/DeleteAccount/v1/",
+        $res->request(
+            'POST',
+            "https://api.steampowered.com/IGameServersService/DeleteAccount/v1/",
             [
                 'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
             ]
