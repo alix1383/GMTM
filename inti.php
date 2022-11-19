@@ -45,7 +45,7 @@ if (isset($_GET['gen'])) {
 }
 
 if (isset($_GET['memo'])) {
-    echo '<p class="text-center display-6 text-success"> New Token Is: ' . $Request->GenToken($_GET['memo'])->login_token . '</p>';
+    echo '<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->GenToken($_GET['memo'])->login_token, ENT_QUOTES, "UTF-8") . '</p>';
 
     $log->info(
         'New Token',
