@@ -48,9 +48,9 @@ if (isset($_GET['memo'])) {
     $log->info(
         'New Token',
         [   'Api Key' => $_SESSION['Token'],
-            'Toekn Steam id' => $_GET['steamid'],
-            'Memo' => $_GET['memo'],
-            'New Token' => $Request->GenToken($_GET['memo'])->login_token,
+            'Toekn Steam id' => SuperGlobals::_GET('steamid'),
+            'Memo' => SuperGlobals::_GET('memo'),
+            'New Token' => $Request->GenToken(SuperGlobals::_GET('memo'))->login_token,
             'IP' => SuperGlobals::_SERVER('REMOTE_ADDR'),
             'HTTP_USER_AGENT' => SuperGlobals::_SERVER('HTTP_USER_AGENT'),
             'SERVER_PROTOCOL' => SuperGlobals::_SERVER('SERVER_PROTOCOL'),

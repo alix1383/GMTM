@@ -18,7 +18,7 @@ class SuperGlobals
 
     public static function _GET($key)
     {
-        return $_GET[$key];
+        return (isset($_GET[$key]) ? $_GET[$key] : null);
     }
 }
 

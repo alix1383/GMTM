@@ -26,8 +26,8 @@ require __DIR__ . '/inti.php';
         //     print '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
         //     return;
         // }
-
-        $_SESSION['Token'] =  $_POST['Token'];
+        
+        $_SESSION['Token'] =  SuperGlobals::_POST('Token');
         print "<meta http-equiv='refresh' content='0'>";
         header('Location: ?list');
     }
