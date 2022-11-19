@@ -19,9 +19,7 @@ use Monolog\Handler\StreamHandler;
 
 require INC . 'vendor/autoload.php';
 require INC . 'Class.Rquest.php';
-
-// date("Y_m_d")
-
+require INC . 'Class.SuperGlobals.php';
 
 $log = new Logger('Steam Game Server Token Manager');
 $log->pushHandler(new StreamHandler("./logs/".date("Y")."/".date("m")."/".date("d")."/" .date('H').".log", Level::Info));
@@ -53,9 +51,9 @@ if (isset($_GET['memo'])) {
             'Toekn Steam id' => $_GET['steamid'],
             'Memo' => $_GET['memo'],
             'New Token' => $Request->GenToken($_GET['memo'])->login_token,
-            'IP' => $_SERVER['REMOTE_ADDR'],
-            'HTTP_USER_AGENT' => $_SERVER['HTTP_USER_AGENT'],
-            'SERVER_PROTOCOL' => $_SERVER['SERVER_PROTOCOL'],
+            'IP' => SuperGlobals::_SERVER('REMOTE_ADDR'),
+            'HTTP_USER_AGENT' => SuperGlobals::_SERVER('HTTP_USER_AGENT'),
+            'SERVER_PROTOCOL' => SuperGlobals::_SERVER('SERVER_PROTOCOL'),
         ]
     );
 }

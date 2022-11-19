@@ -31,8 +31,8 @@ class Request
                 'query' => ['key' => $this->Apikey],
             ]
         );
-        $encodedHtmlPost = array_map('htmlspecialchars', json_decode($result->getBody())->response->servers);
-        return $encodedHtmlPost;
+        
+        return json_decode($result->getBody(), true)['response']['servers'];
     }
 
     /**
