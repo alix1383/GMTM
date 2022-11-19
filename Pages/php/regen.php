@@ -4,7 +4,7 @@ if (!isset($_SESSION['Token']) && isset($_GET['steamid'])) {
     die('something went wrong!');
 }
 
-echo "New Token is: " . htmlentities($Request->UpdateToken($_GET['steamid']), ENT_QUOTES, "UTF-8") ;
+print "New Token is: " . htmlentities($Request->UpdateToken($_GET['steamid']), ENT_QUOTES, "UTF-8") ;
 
 $log->info(
     'Regen Token',

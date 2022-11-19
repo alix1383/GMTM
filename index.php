@@ -17,18 +17,18 @@ require __DIR__ . '/inti.php';
     }
     if (isset($_POST['Token'])) {
         if (!strlen($_POST['Token']) == 32) {
-            echo '<p class="text-center display-6 text-danger ">Pls Enter valid Web api Key!!</p>';
+            print '<p class="text-center display-6 text-danger ">Pls Enter valid Web api Key!!</p>';
             return;
         }
 
         // $ValidateKey = new Request($_POST['Token'])
         // if (!$ValidateKey == true) {
-        //     echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
+        //     print '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
         //     return;
         // }
 
         $_SESSION['Token'] =  $_POST['Token'];
-        echo "<meta http-equiv='refresh' content='0'>";
+        print "<meta http-equiv='refresh' content='0'>";
         header('Location: ?list');
     }
 ?>
