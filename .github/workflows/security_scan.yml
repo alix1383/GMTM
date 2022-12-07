@@ -11,6 +11,11 @@ jobs:
         with:
           node-version: 19
 
+      - name: Setup PHP with composer v2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
       - name: Checkout code
         uses: actions/checkout@v3
 
