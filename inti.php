@@ -22,7 +22,6 @@ $GET = $Input->get();
 $SESSION = $Input->session();
 $SERVER = $Input->server();
 
-
 if (isset($SESSION['Token'])) {
     $Request = new Request($SESSION['Token']);
     include_once PAGE_TMPL_HTML . 'header.html';

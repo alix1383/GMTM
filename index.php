@@ -15,7 +15,7 @@ require __DIR__ . '/inti.php';
     $Token = $Input->post('Token');
     
     if (! isset($SESSION['Token'])) {
-        include_once PAGE_TMPL_HTML.'form.html';
+        include_once PAGE_TMPL_HTML . 'form.html';
     }
     if (isset($Token)) {
         if (!strlen($Token) == 32) {
