@@ -5,9 +5,9 @@ class Input
 
     public function __construct()
     {
-        $this->post = $_POST;
-        $this->get = $_GET;
-        $this->server = $_SERVER;
+        $this->post    = $_POST;
+        $this->get     = $_GET;
+        $this->server  = $_SERVER;
         $this->session = $_SESSION;
 
     }
