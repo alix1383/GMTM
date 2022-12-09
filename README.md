@@ -10,4 +10,4 @@ Steam Game Server Token Manager
  
 `PHP >= 8` Require
 
-- [] Update Token
+- [ ] Update Token
