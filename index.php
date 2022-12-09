@@ -12,23 +12,25 @@ require __DIR__ . '/inti.php';
 
 <body>
     <?php
-    if (! isset($_SESSION['Token'])) {
+    $Token = $Input->post('Token');
+    
+    if (! isset($SESSION['Token'])) {
         include_once PAGE_TMPL_HTML.'form.html';
     }
-    if (isset($_POST['Token'])) {
-        if (!strlen($_POST['Token']) == 32) {
-            print '<p class="text-center display-6 text-danger ">Pls Enter valid Web api Key!!</p>';
+    if (isset($Token)) {
+        if (!strlen($Token) == 32) {
+            echo '<p class="text-center display-6 text-danger ">Pls Enter valid Web api Key!!</p>';
             return;
         }
 
-        // $ValidateKey = new Request($_POST['Token'])
-        // if (!$ValidateKey == true) {
-        //     print '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
-        //     return;
-        // }
+        $ValidateKey = new Request($Token);
+        if (!$ValidateKey == true) {
+            echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
+            return;
+        }
         
-        $_SESSION['Token'] =  SuperGlobals::_POST('Token');
-        print "<meta http-equiv='refresh' content='0'>";
+        $_SESSION['Token'] = $Token;
+        echo "<meta http-equiv='refresh' content='0'>";
         header('Location: ?list');
     }
 ?>
