@@ -1,35 +1,35 @@
 <?php
 class Input
 {
-    private $_post, $_get, $_session, $_server;
+    private $post, $get, $session, $server;
 
     public function __construct()
     {
-        $this->_post = $_POST;
-        $this->_get = $_GET;
-        $this->_server = $_SERVER;
-        $this->_session = $_SESSION;
+        $this->post = $_POST;
+        $this->get = $_GET;
+        $this->server = $_SERVER;
+        $this->session = $_SESSION;
 
     }
 
     public function post($key = null, $default = null)
     {
-        return $this->checkGlobal($this->_post, $key, $default);
+        return $this->checkGlobal($this->post, $key, $default);
     }
 
     public function get($key = null, $default = null)
     {
-        return $this->checkGlobal($this->_get, $key, $default);
+        return $this->checkGlobal($this->get, $key, $default);
     }
 
     public function server($key = null, $default = null)
     {
-        return $this->checkGlobal($this->_server, $key, $default);
+        return $this->checkGlobal($this->server, $key, $default);
     }
 
     public function session($key = null, $default = null)
     {
-        return $this->checkGlobal($this->_session, $key, $default);
+        return $this->checkGlobal($this->session, $key, $default);
     }
 
     private function checkGlobal($global, $key = null, $default = null)

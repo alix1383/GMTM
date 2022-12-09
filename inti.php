@@ -14,7 +14,6 @@ define('Logger', '0');
 
 require INC . 'vendor/autoload.php';
 require INC . 'Class.Rquest.php';
-require INC . 'Class.SuperGlobals.php';
 require INC . 'Class.Input.php';
 
 $Input = new Input();
@@ -25,7 +24,7 @@ $SERVER = $Input->server();
 
 
 if (isset($SESSION['Token'])) {
-    $Request = new Request($_SESSION['Token']);
+    $Request = new Request($SESSION['Token']);
     include_once PAGE_TMPL_HTML . 'header.html';
 }
 

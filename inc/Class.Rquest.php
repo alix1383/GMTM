@@ -2,8 +2,7 @@
 
 class Request
 {
-    private $Client;
-    private $Apikey;
+    private $Client, $Apikey;
     /**
      * __construct
      *
