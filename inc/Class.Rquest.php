@@ -30,7 +30,7 @@ class Request
                 'query' => ['key' => $this->Apikey],
             ]
         );
-        
+
         return json_decode($result->getBody(), true)['response']['servers'];
     }
 
@@ -78,7 +78,7 @@ class Request
      * Regenerate Token
      *
      * @param integer $Steamid
-     * @return string new Token
+     * @return string New Token
      */
     public function ResetToken(int $Steamid)
     {
@@ -109,5 +109,23 @@ class Request
                 'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
             ]
         );
+    }
+    /**
+     * ResetLoginToken function
+     *
+     * @param integer $Steamid
+     * @return string New Token
+     */
+    public function ResetLoginToken(int $Steamid)
+    {
+        $res = $this->Client;
+        $result = $res->request(
+            'POST',
+            "https://api.steampowered.com/IGameServersService/ResetLoginToken/v1/",
+            [
+                'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
+            ]
+        );
+        return json_decode($result->getBody())->response->login_token;
     }
 }
