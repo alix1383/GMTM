@@ -12,3 +12,4 @@ Steam Game Server Token Manager
 
 - [ ] Update Token
 - [ ] Logs
+- [ ] Add More Games
