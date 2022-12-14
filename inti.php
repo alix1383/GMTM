@@ -40,7 +40,7 @@ if (isset($GET['gen'])) {
 }
 
 if (isset($GET['memo'])) {
-    echo '<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->GenToken($GET['memo'])->login_token, ENT_QUOTES, "UTF-8") . '</p>';
+    print_r('<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->GenToken($GET['memo'])->login_token, ENT_QUOTES, "UTF-8") . '</p>');
     if (Logger == 1) {
         $log->info(
             'New Token',

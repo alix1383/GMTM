@@ -19,18 +19,18 @@ require __DIR__ . '/inti.php';
     }
     if (isset($Token)) {
         if (!strlen($Token) == 32) {
-            echo '<p class="text-center display-6 text-danger ">Pls Enter valid Web api Key!!</p>';
+            print_r('<p class="text-center display-6 text-danger ">Pls Enter valid Web api Key!!</p>');
             return;
         }
 
         $ValidateKey = new Request($Token);
         if (!$ValidateKey == true) {
-            echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
+            print_r('<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>');
             return;
         }
         
         $_SESSION['Token'] = $Token;
-        echo "<meta http-equiv='refresh' content='0'>";
+        print_r("<meta http-equiv='refresh' content='0'>");
         header('Location: ?list');
     }
 ?>
