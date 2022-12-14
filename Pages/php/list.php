@@ -21,22 +21,22 @@ $response = secure($res);
         <?php foreach ($response as $key => $item) {?>
         <tbody>
             <tr>
-                <th scope="row"><?php print_r($key)?></th>
-                <td class="font-monospace"><?php print_r($item['memo'])?></td>
+                <th scope="row"><?php say($key)?></th>
+                <td class="font-monospace"><?php say($item['memo'])?></td>
                 <td
-                    class="font-monospace <?php print_r(($item['is_expired'] == 1 ? "text-bg-danger" : "text-bg-success"))?> ">
-                    <?php print_r(($item['is_expired'] == 0 ? 'No' : 'Yes'))?></td>
-                <td class="font-monospace" id="<?php print_r($key)?>"><?php print_r($item['login_token'])?></td>
+                    class="font-monospace <?php say(($item['is_expired'] == 1 ? "text-bg-danger" : "text-bg-success"))?> ">
+                    <?php say(($item['is_expired'] == 0 ? 'No' : 'Yes'))?></td>
+                <td class="font-monospace" id="<?php say($key)?>"><?php say($item['login_token'])?></td>
                 <td class="col-2">
-                    <button onclick="CopyToClipboard(<?php print_r($key)?>)" class="p-m-1 btn btn-outline-dark"
+                    <button onclick="CopyToClipboard(<?php say($key)?>)" class="p-m-1 btn btn-outline-dark"
                         type="submit">
                         Copy Token
                     </button>
-                    <a href="?del&steamid=<?php print_r($item['steamid'])?>"><button
+                    <a href="?del&steamid=<?php say($item['steamid'])?>"><button
                             class="p-m-1 btn btn-warning link-danger" type="submit">
                             Delete
                         </button></a>
-                    <a href="?regen&steamid=<?php print_r($item['steamid'])?>"><button
+                    <a href="?regen&steamid=<?php say($item['steamid'])?>"><button
                             class="p-m-1 btn btn-dark link-success" type="submit">
                             Regenerate
                         </button></a>

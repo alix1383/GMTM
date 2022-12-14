@@ -3,7 +3,7 @@ if (! isset($SESSION['Token']) && isset($GET['steamid'])) {
     die('something went wrong!');
 }
 
-print_r('<p class="text-center display-6 text-success"> New Token Is: ' . $Request->ResetLoginToken($GET['steamid']) . '</p>');
+say('<p class="text-center display-6 text-success"> New Token Is: ' . $Request->ResetLoginToken($GET['steamid']) . '</p>');
 
 if (Logger == 1) {
     $log->info(
