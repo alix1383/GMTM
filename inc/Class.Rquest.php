@@ -3,7 +3,11 @@
 class Request
 {
     private $Client, $Apikey;
-
+    /**
+     * __construct
+     *
+     * @param string $Apikey
+     */
     public function __construct(string $Apikey)
     {
         $Client = new GuzzleHttp\Client();
@@ -11,7 +15,12 @@ class Request
         $this->Apikey = $Apikey;
     }
 
-    public function GetTokenList(): array
+    /**
+     * Get Token List
+     *
+     * @return array Token List
+     */
+    public function GetTokenList()
     {
         $res = $this->Client;
         $result = $res->request(
@@ -25,7 +34,12 @@ class Request
         return json_decode($result->getBody(), true)['response']['servers'];
     }
 
-    public function Is_ValidaApiKey(): bool
+    /**
+     * Validate Api
+     *
+     * @return boolean
+     */
+    public function Is_ValidaApiKey()
     {
         try {
             $res = $this->Client;
@@ -41,8 +55,13 @@ class Request
             return false;
         }
     }
-
-    public function GenToken(string $Memo): object
+    /**
+     * Generate New TOken
+     *
+     * @param string $Memo
+     * @return object login_token & steamid
+     */
+    public function GenToken(string $Memo)
     {
         $res = $this->Client;
         $result = $res->request(
@@ -55,7 +74,13 @@ class Request
         return json_decode($result->getBody())->response;
     }
 
-    public function ResetToken(int $Steamid):string
+    /**
+     * Regenerate Token
+     *
+     * @param integer $Steamid
+     * @return string New Token
+     */
+    public function ResetToken(int $Steamid)
     {
         $res = $this->Client;
         $result = $res->request(
@@ -68,7 +93,13 @@ class Request
         return json_decode($result->getBody()->getContents())->response->login_token;
     }
 
-    public function DeleteToken(int $Steamid): void
+    /**
+     * Undocumented function
+     *
+     * @param integer $Steamid
+     * @return void
+     */
+    public function DeleteToken(int $Steamid)
     {
         $res = $this->Client;
         $res->request(
@@ -79,8 +110,13 @@ class Request
             ]
         );
     }
-
-    public function ResetLoginToken(int $Steamid): string
+    /**
+     * ResetLoginToken function
+     *
+     * @param integer $Steamid
+     * @return string New Token
+     */
+    public function ResetLoginToken(int $Steamid)
     {
         $res = $this->Client;
         $result = $res->request(

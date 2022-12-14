@@ -1,5 +1,12 @@
 <?php
 
+function say(string $var = null)
+{
+    echo htmlentities($var, ENT_QUOTES, "UTF-8");
+}
+
+
+
 //! https://partner.steamgames.com/doc/webapi/IGameServersService
 // error_reporting(0);
 
