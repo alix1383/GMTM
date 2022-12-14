@@ -1,6 +1,7 @@
 <?php
 if (! isset($SESSION['Token']) && isset($GET['steamid'])) {
-    die('something went wrong!');
+    say('something went wrong!');
+    exit;
 }
 
 say('<p class="text-center display-6 text-success"> New Token Is: ' . $Request->ResetLoginToken($GET['steamid']) . '</p>');

@@ -1,7 +1,8 @@
 <?php
 
 if (!isset($SESSION['Token']) && isset($GET['steamid'])) {
-    die('something went wrong!');
+    say('something went wrong!');
+    exit;
 }
 
 $Request->DeleteToken($GET['steamid']);

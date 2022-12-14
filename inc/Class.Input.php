@@ -1,4 +1,9 @@
 <?php
+
+function say(string $var = null)
+{
+    echo htmlentities($var, ENT_QUOTES, "UTF-8");
+}
 class Input
 {
     private $post, $get, $session, $server;
