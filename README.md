@@ -9,7 +9,7 @@
 [![DeepSource](https://deepsource.io/gh/alix1383/GM-Token-Manager.svg/?label=active+issues&show_trend=true&token=v35qf177o-tU83Gn6-MjmzGp)](https://deepsource.io/gh/alix1383/GM-Token-Manager/?ref=repository-badge)
 
 Steam Game Server Token Manager
- 
+
 `PHP >= 8` Require
 
 - [X] ResetLoginToken
