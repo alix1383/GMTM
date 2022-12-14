@@ -21,7 +21,7 @@ $response = secure($res);
         <?php foreach ($response as $key => $item) {?>
         <tbody>
             <tr>
-                <th scope="row"><?php say($key)?></th>
+                <th scope="row"><?= $key?></th>
                 <td class="font-monospace"><?php say($item['memo'])?></td>
                 <td
                     class="font-monospace <?php say(($item['is_expired'] == 1 ? "text-bg-danger" : "text-bg-success"))?> ">

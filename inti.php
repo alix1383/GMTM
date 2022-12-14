@@ -1,15 +1,7 @@
 <?php
 
-function say(string $var = null)
-{
-    echo htmlentities($var, ENT_QUOTES, "UTF-8");
-}
-
-
-
 //! https://partner.steamgames.com/doc/webapi/IGameServersService
 // error_reporting(0);
-
 
 define('ROOT', __DIR__);
 define('INC', ROOT . '/inc/');
