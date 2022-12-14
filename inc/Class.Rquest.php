@@ -20,7 +20,7 @@ class Request
      *
      * @return array Token List
      */
-    public function GetTokenList()
+    public function GetTokenList(): array
     {
         $res = $this->Client;
         $result = $res->request(
@@ -39,7 +39,7 @@ class Request
      *
      * @return boolean
      */
-    public function Is_ValidaApiKey()
+    public function Is_ValidaApiKey(): bool
     {
         try {
             $res = $this->Client;
@@ -61,7 +61,7 @@ class Request
      * @param string $Memo
      * @return object login_token & steamid
      */
-    public function GenToken(string $Memo)
+    public function GenToken(string $Memo): object
     {
         $res = $this->Client;
         $result = $res->request(
@@ -80,7 +80,7 @@ class Request
      * @param integer $Steamid
      * @return string New Token
      */
-    public function ResetToken(int $Steamid)
+    public function ResetToken(int $Steamid): string
     {
         $res = $this->Client;
         $result = $res->request(
@@ -99,7 +99,7 @@ class Request
      * @param integer $Steamid
      * @return void
      */
-    public function DeleteToken(int $Steamid)
+    public function DeleteToken(int $Steamid): void
     {
         $res = $this->Client;
         $res->request(
@@ -116,7 +116,7 @@ class Request
      * @param integer $Steamid
      * @return string New Token
      */
-    public function ResetLoginToken(int $Steamid)
+    public function ResetLoginToken(int $Steamid): string
     {
         $res = $this->Client;
         $result = $res->request(
