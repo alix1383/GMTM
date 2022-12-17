@@ -39,7 +39,7 @@ class Request
      *
      * @return boolean
      */
-    public function is_validaApiKey(): bool
+    public function verifyApiKey(): bool
     {
         try {
             $res = $this->Client;
