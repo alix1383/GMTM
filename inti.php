@@ -39,14 +39,14 @@ if (isset($GET['gen'])) {
 }
 
 if (isset($GET['memo'])) {
-    say('<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->GenToken($GET['memo'])->login_token, ENT_QUOTES, "UTF-8") . '</p>');
+    say('<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->genToken($GET['memo'])->login_token, ENT_QUOTES, "UTF-8") . '</p>');
     if (Logger == 1) {
         $log->info(
             'New Token',
             ['Api Key'            => $SESSION['Token'],
                 'Toekn Steam id'  => $GET['steamid'],
                 'Memo'            => $GET['memo'],
-                'New Token'       => $Request->GenToken($GET['memo'])->login_token,
+                'New Token'       => $Request->genToken($GET['memo'])->login_token,
                 'IP'              => $SERVER['REMOTE_ADDR'],
                 'HTTP_USER_AGENT' => $SERVER['HTTP_USER_AGENT'],
                 'SERVER_PROTOCOL' => $SERVER['SERVER_PROTOCOL'],

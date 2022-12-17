@@ -4,7 +4,7 @@ if (! isset($SESSION['Token']) && isset($GET['steamid'])) {
     exit;
 }
 
-say('<p class="text-center display-6 text-success"> New Token Is: ' . $Request->ResetLoginToken($GET['steamid']) . '</p>');
+say('<p class="text-center display-6 text-success"> New Token Is: ' . $Request->resetLoginToken($GET['steamid']) . '</p>');
 
 if (Logger == 1) {
     $log->info(
@@ -12,7 +12,7 @@ if (Logger == 1) {
         [
             'api key'         => $SESSION['Token'],
             'Toekn Steam id'  => $GET['steamid'],
-            'new Token'       => $Request->ResetLoginToken($GET['steamid']),
+            'new Token'       => $Request->resetLoginToken($GET['steamid']),
             'IP'              => $SERVER['REMOTE_ADDR'],
             'HTTP_USER_AGENT' => $SERVER['HTTP_USER_AGENT'],
             'SERVER_PROTOCOL' => $SERVER['SERVER_PROTOCOL'],

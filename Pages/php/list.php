@@ -1,4 +1,4 @@
-<?php $res = $Request->GetTokenList();
+<?php $res = $Request->getTokenList();
 
 function secure($val)
 {

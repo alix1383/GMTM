@@ -5,7 +5,7 @@ if (!isset($SESSION['Token']) && isset($GET['steamid'])) {
     exit;
 }
 
-$Request->DeleteToken($GET['steamid']);
+$Request->deleteToken($GET['steamid']);
 say('<p class="text-center display-6 text-danger">The Token Was Deleted Successful!</p>');
 
 if (Logger == 1) {
