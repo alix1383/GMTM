@@ -1,0 +1,478 @@
+[
+    {
+        "SERVER_NAME":"7 Days to Die Dedicated Server",
+        "APPiD":"294420"
+    },
+    {
+        "SERVER_NAME":"Assetto Corsa Dedicated Server",
+        "APPiD":"302550"
+    },
+    {
+        "SERVER_NAME":"ASTRONEER Dedicated Server",
+        "APPiD":"728470"
+    },
+    {
+        "SERVER_NAME":"Age of Chivalry Dedicated Server",
+        "APPiD":"17515"
+    },
+    {
+        "SERVER_NAME":"Aliens vs Predator Dedicated Server",
+        "APPiD":"34120"
+    },
+    {
+        "SERVER_NAME":"America's Army 3 Dedicated Server",
+        "APPiD":"13180"
+    },
+    {
+        "SERVER_NAME":"America's Army 3 Dedicated Server Beta",
+        "APPiD":"13160"
+    },
+    {
+        "SERVER_NAME":"America's Army: Proving Grounds Dedicated Server",
+        "APPiD":"203300"
+    },
+    {
+        "SERVER_NAME":"ARK: Survival Evolved Dedicated Server",
+        "APPiD":"376030"
+    },
+    {
+        "SERVER_NAME":"ARK: Survival of the Fittest Dedicated Server",
+        "APPiD":"445400"
+    },
+    {
+        "SERVER_NAME":"ARMA 2 Dedicated Server",
+        "APPiD":"33905"
+    },
+    {
+        "SERVER_NAME":"Arma 2: Operation Arrowhead Dedicated Server",
+        "APPiD":"33935"
+    },
+    {
+        "SERVER_NAME":"Breach Dedicated Server",
+        "APPiD":"72310"
+    },
+    {
+        "SERVER_NAME":"BrainBread 2 Dedicated Server",
+        "APPiD":"475370"
+    },
+    {
+        "SERVER_NAME":"Brink Dedicated Server",
+        "APPiD":"72780"
+    },
+    {
+        "SERVER_NAME":"BlazeRush Dedicated Server",
+        "APPiD":"332850"
+    },
+    {
+        "SERVER_NAME":"Capsa Dedicated Server",
+        "APPiD":"667230"
+    },
+    {
+        "SERVER_NAME":"Call of Duty: Modern Warfare 3 Dedicated Server|",
+        "APPiD":"42750"
+    },
+    {
+        "SERVER_NAME":"Chivalry: Deadliest Warrior Dedicated server",
+        "APPiD":"258680"
+    },
+    {
+        "SERVER_NAME":"Chivalry: Medieval Warfare Dedicated Server",
+        "APPiD":"220070"
+    },
+    {
+        "SERVER_NAME":"Conan Exiles Dedicated Server",
+        "APPiD":"443030"
+    },
+    {
+        "SERVER_NAME":"Counter-Strike 1.6 Dedicated Server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Counter-Strike: Source Dedicated Server",
+        "APPiD":"232330"
+    },
+    {
+        "SERVER_NAME":"D.I.P.R.I.P. Dedicated Server",
+        "APPiD":"17535"
+    },
+    {
+        "SERVER_NAME":"Dark Messiah of Might & Magic Dedicated Server",
+        "APPiD":"2145"
+    },
+    {
+        "SERVER_NAME":"Darkest Hour Dedicated Server",
+        "APPiD":"1290"
+    },
+    {
+        "SERVER_NAME":"Day of Defeat: Source Dedicated Server",
+        "APPiD":"232290"
+    },
+    {
+        "SERVER_NAME":"Day of Infamy Dedicated Server",
+        "APPiD":"462310"
+    },
+    {
+        "SERVER_NAME":"Dino D-Day Dedicated Server",
+        "APPiD":"70010"
+    },
+    {
+        "SERVER_NAME":"Dayz Dedicated Server",
+        "APPiD":"223350"
+    },
+    {
+        "SERVER_NAME":"Double Action Dedicated Server",
+        "APPiD":"317800"
+    },
+    {
+        "SERVER_NAME":"Dystopia Dedicated Server",
+        "APPiD":"17585"
+    },
+    {
+        "SERVER_NAME":"Eden Star Dedicated Server",
+        "APPiD":"419790"
+    },
+    {
+        "SERVER_NAME":"E.Y.E - Dedicated Server",
+        "APPiD":"91720"
+    },
+    {
+        "SERVER_NAME":"Empires Dedicated Server",
+        "APPiD":"460040"
+    },
+    {
+        "SERVER_NAME":"Eternal Silence Dedicated Server",
+        "APPiD":"17555"
+    },
+    {
+        "SERVER_NAME":"Fistful of Frags Server",
+        "APPiD":"295230"
+    },
+    {
+        "SERVER_NAME":"Fortress Forever Dedicated Server",
+        "APPiD":"329710"
+    },
+    {
+        "SERVER_NAME":"Garry's Mod Dedicated Server",
+        "APPiD":"4020"
+    },
+    {
+        "SERVER_NAME":"GTR Evolution Demo Dedicated Server",
+        "APPiD":"8730"
+    },
+    {
+        "SERVER_NAME":"Half-Life 2: Deathmatch Dedicated Server",
+        "APPiD":"232370"
+    },
+    {
+        "SERVER_NAME":"Half-Life Deathmatch: Source Dedicated server",
+        "APPiD":"255470"
+    },
+    {
+        "SERVER_NAME":"Half-Life Dedicated Server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Homefront Dedicated Server",
+        "APPiD":"55280"
+    },
+    {
+        "SERVER_NAME":"Insurgency: Sandstorm Dedicated Server",
+        "APPiD":"581330"
+    },
+    {
+        "SERVER_NAME":"Insurgency Dedicated Server",
+        "APPiD":"237410"
+    },
+    {
+        "SERVER_NAME":"Insurgency: Modern Infantry Combat Dedicated Server",
+        "APPiD":"17705"
+    },
+    {
+        "SERVER_NAME":"Just Cause 2: Multiplayer Dedicated Server",
+        "APPiD":"261140"
+    },
+    {
+        "SERVER_NAME":"JBMod Dedicated Server",
+        "APPiD":"2181210"
+    },
+    {
+        "SERVER_NAME":"Killing Floor Beta Dedicated Server",
+        "APPiD":"1273"
+    },
+    {
+        "SERVER_NAME":"Killing Floor 2 Dedicated Server Windows",
+        "APPiD":"232130"
+    },
+    {
+        "SERVER_NAME":"Kingdoms Rise Dedicated Server",
+        "APPiD":"265360"
+    },
+    {
+        "SERVER_NAME":"Lambda Wars Dedicated Server",
+        "APPiD":"319060"
+    },
+    {
+        "SERVER_NAME":"Left 4 Dead 2 Dedicated Server",
+        "APPiD":"222860"
+    },
+    {
+        "SERVER_NAME":"Left 4 Dead Dedicated Server",
+        "APPiD":"222840"
+    },
+    {
+        "SERVER_NAME":"Life is Feudal: Your Own Dedicated Server",
+        "APPiD":"320850"
+    },
+    {
+        "SERVER_NAME":"Mare Nostrum Dedicated Server",
+        "APPiD":"?"
+    },
+    {
+        "SERVER_NAME":"Monday Night Combat Dedicated Server",
+        "APPiD":"63220"
+    },
+    {
+        "SERVER_NAME":"Natural Selection 2 Dedicated Server",
+        "APPiD":"4940"
+    },
+    {
+        "SERVER_NAME":"Nexuiz Dedicated Server",
+        "APPiD":"96810"
+    },
+    {
+        "SERVER_NAME":"No More Room in Hell Dedicated Server",
+        "APPiD":"317670"
+    },
+    {
+        "SERVER_NAME":"NEOTOKYO Dedicated Server",
+        "APPiD":"313600"
+    },
+    {
+        "SERVER_NAME":"NS2: Combat Dedicated Server",
+        "APPiD":"313900"
+    },
+    {
+        "SERVER_NAME":"Nuclear Dawn Dedicated Server",
+        "APPiD":"111710"
+    },
+    {
+        "SERVER_NAME":"Out of Reach Dedicated Server",
+        "APPiD":"406800"
+    },
+    {
+        "SERVER_NAME":"Painkiller Hell & Damnation Dedicated Server",
+        "APPiD":"230030"
+    },
+    {
+        "SERVER_NAME":"Pirates, Vikings, and Knights II Dedicated Server",
+        "APPiD":"17575"
+    },
+    {
+        "SERVER_NAME":"Primal Carnage Dedicated Server",
+        "APPiD":"224620"
+    },
+    {
+        "SERVER_NAME":"RACE 07 Dedicated Server",
+        "APPiD":"8610"
+    },
+    {
+        "SERVER_NAME":"RACE 07 Demo - Crowne Plaza Edition Dedicated Server",
+        "APPiD":"8680"
+    },
+    {
+        "SERVER_NAME":"RACE 07 Demo Dedicated Server",
+        "APPiD":"4270"
+    },
+    {
+        "SERVER_NAME":"RACE On - Demo: Dedicated Server",
+        "APPiD":"8770"
+    },
+    {
+        "SERVER_NAME":"Ravaged Dedicated Server",
+        "APPiD":"223160"
+    },
+    {
+        "SERVER_NAME":"Red Orchestra 2 Dedicated Server",
+        "APPiD":"212542"
+    },
+    {
+        "SERVER_NAME":"Red Orchestra Windows Dedicated Server",
+        "APPiD":"223240"
+    },
+    {
+        "SERVER_NAME":"Reflex Dedicated Server",
+        "APPiD":"329740"
+    },
+    {
+        "SERVER_NAME":"Reign Of Kings Dedicated Server",
+        "APPiD":"381690"
+    },
+    {
+        "SERVER_NAME":"Serious Sam 3 Dedicated Server",
+        "APPiD":"41080"
+    },
+    {
+        "SERVER_NAME":"Serious Sam HD Dedicated Server",
+        "APPiD":"41005"
+    },
+    {
+        "SERVER_NAME":"Serious Sam Classics: Revolution Dedicated Server",
+        "APPiD":"41005"
+    },
+    {
+        "SERVER_NAME":"Serious Sam HD: The Second Encounter Dedicated Server",
+        "APPiD":"41015"
+    },
+    {
+        "SERVER_NAME":"Sniper Elite 3 Dedicated Server",
+        "APPiD":"266910"
+    },
+    {
+        "SERVER_NAME":"Sniper Elite V2 Dedicated Server",
+        "APPiD":"208050"
+    },
+    {
+        "SERVER_NAME":"Source 2007 Dedicated Server",
+        "APPiD":"310"
+    },
+    {
+        "SERVER_NAME":"Source Dedicated Server",
+        "APPiD":"205"
+    },
+    {
+        "SERVER_NAME":"Source SDK Base 2013 Dedicated Server",
+        "APPiD":"244310"
+    },
+    {
+        "SERVER_NAME":"Space Engineers Dedicated Server",
+        "APPiD":"298740"
+    },
+    {
+        "SERVER_NAME":"Squad Dedicated Server",
+        "APPiD":"403240"
+    },
+    {
+        "SERVER_NAME":"STCC - The Game Demo Dedicated Server",
+        "APPiD":"8710"
+    },
+    {
+        "SERVER_NAME":"Sven Co-op Dedicated Server",
+        "APPiD":"276060"
+    },
+    {
+        "SERVER_NAME":"Synergy Dedicated Server",
+        "APPiD":"17525"
+    },
+    {
+        "SERVER_NAME":"Takedown: Red Sabre Dedicated Server",
+        "APPiD":"261020"
+    },
+    {
+        "SERVER_NAME":"Team Fortress 2 Dedicated Server",
+        "APPiD":"232250"
+    },
+    {
+        "SERVER_NAME":"The Haunted: Hells Reach Dedicated Server",
+        "APPiD":"43210"
+    },
+    {
+        "SERVER_NAME":"Tower Unite Dedicated server",
+        "APPiD":"439660"
+    },
+    {
+        "SERVER_NAME":"The Ship Dedicated Server",
+        "APPiD":"2403"
+    },
+    {
+        "SERVER_NAME":"Zombie Panic Source Dedicated Server",
+        "APPiD":"17505"
+    },
+    {
+        "SERVER_NAME":"Zombie Grinder Dedicated Server",
+        "APPiD":"374980"
+    },
+    {
+        "SERVER_NAME":"Counter-Strike: Condition Zero Dedicated Server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Deathmatch Classic Dedicated Server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Day of Defeat Dedicated Server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Half-Life: Opposing Force Dedicated Server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Ricochet Dedicated Server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Team Fortress Classic dedicated server",
+        "APPiD":"90"
+    },
+    {
+        "SERVER_NAME":"Hurtworld dedicated server",
+        "APPiD":"405100"
+    },
+    {
+        "SERVER_NAME":"Source SDK Base 2006 MP Dedicated Server",
+        "APPiD":"205"
+    },
+    {
+        "SERVER_NAME":"Black Mesa: Deathmatch Dedicated Server",
+        "APPiD":"346680"
+    },
+    {
+        "SERVER_NAME":"Arma 3 Dedicated Server",
+        "APPiD":"233780"
+    },
+    {
+        "SERVER_NAME":"Blade Symphony Dedicated Server",
+        "APPiD":"228780"
+    },
+    {
+        "SERVER_NAME":"Project Zomboid Dedicated Server",
+        "APPiD":"108600"
+    },
+    {
+        "SERVER_NAME":"Starbound Dedicated server",
+        "APPiD":"211820"
+    },
+    {
+        "SERVER_NAME":"Starvoid Dedicated Server",
+        "APPiD":"210370"
+    },
+    {
+        "SERVER_NAME":"Counter-Strike Global Offensive Dedicated Server",
+        "APPiD":"740"
+    },
+    {
+        "SERVER_NAME":"Rust Dedicated Server",
+        "APPiD":"258550"
+    },
+    {
+        "SERVER_NAME":"Killing Floor Dedicated Server Windows",
+        "APPiD":"215350"
+    },
+    {
+        "SERVER_NAME":"Contagion Dedicated Server",
+        "APPiD":"238430"
+    },
+    {
+        "SERVER_NAME":"The Forest Dedicated Server",
+        "APPiD":"556450"
+    },
+    {
+        "SERVER_NAME":"Alien Swarm Dedicated Server",
+        "APPiD":"635"
+    },
+    {
+        "SERVER_NAME":"Alien Swarm: Reactive Drop Dedicated Server",
+        "APPiD":"582400"
+    }
+]

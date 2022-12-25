@@ -1,12 +1,12 @@
 <?php
 
 if (!isset($SESSION['Token']) && isset($GET['steamid'])) {
-    say('something went wrong!');
+    echo 'something went wrong!';
     exit;
 }
 
 $Request->deleteToken($GET['steamid']);
-say('<p class="text-center display-6 text-danger">The Token Was Deleted Successful!</p>');
+echo '<p class="text-center display-6 text-danger">The Token Was Deleted Successful!</p>';
 
 if (Logger == 1) {
     $log->info(

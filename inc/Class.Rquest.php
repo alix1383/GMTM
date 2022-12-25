@@ -61,14 +61,14 @@ class Request
      * @param string $Memo
      * @return object login_token & steamid
      */
-    public function genToken(string $Memo): object
+    public function genToken(string $Memo, int $appid): object
     {
         $res = $this->Client;
         $result = $res->request(
             'POST',
             "https://api.steampowered.com/IGameServersService/CreateAccount/v1/",
             [
-                'query' => ['key' => $this->Apikey, 'appid' => 730, 'memo' => $Memo],
+                'query' => ['key' => $this->Apikey, 'appid' => $appid, 'memo' => $Memo],
             ]
         );
         return json_decode($result->getBody())->response;

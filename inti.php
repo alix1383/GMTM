@@ -7,6 +7,8 @@ define('ROOT', __DIR__);
 define('INC', ROOT . '/inc/');
 define('PAGE_TMPL_HTML', ROOT . '/Pages/Html/');
 define('PAGE_TMPL_PHP', ROOT . '/Pages/php/');
+define('DATA', ROOT . '/data/');
+
 //! If U need logger set to 1
 define('Logger', '0');
 
@@ -21,10 +23,11 @@ $GET = $Input->get();
 $SESSION = $Input->session();
 $SERVER = $Input->server();
 
+
 if (isset($SESSION['Token'])) {
     $Request = new Request($SESSION['Token']);
     include_once PAGE_TMPL_HTML . 'header.html';
-}
+} 
 
 if (isset($GET['list'])) {
     require PAGE_TMPL_PHP . 'list.php';
@@ -35,11 +38,11 @@ if (isset($GET['regen'])) {
 }
 
 if (isset($GET['gen'])) {
-    include_once PAGE_TMPL_HTML . 'gen.html';
+    include_once PAGE_TMPL_PHP . 'gen.php';
 }
 
 if (isset($GET['memo'])) {
-    say('<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->genToken($GET['memo'])->login_token, ENT_QUOTES, "UTF-8") . '</p>');
+    echo '<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->genToken($GET['memo'], $GET['appid'])->login_token, ENT_QUOTES, "UTF-8") . '</p>';
     if (Logger == 1) {
         $log->info(
             'New Token',
@@ -53,8 +56,6 @@ if (isset($GET['memo'])) {
             ]
         );
     }
-    
-
 }
 
 if (isset($GET['del'])) {

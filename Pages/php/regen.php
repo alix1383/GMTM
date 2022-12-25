@@ -1,10 +1,10 @@
 <?php
 if (! isset($SESSION['Token']) && isset($GET['steamid'])) {
-    say('something went wrong!');
+    echo'something went wrong!';
     exit;
 }
 
-say('<p class="text-center display-6 text-success"> New Token Is: ' . $Request->resetLoginToken($GET['steamid']) . '</p>');
+echo '<p class="text-center display-6 text-success"> New Token Is: ' . $Request->resetLoginToken($GET['steamid']) . '</p>';
 
 if (Logger == 1) {
     $log->info(

@@ -13,5 +13,5 @@ Steam Game Server Token Manager
 `PHP >= 8` Require
 
 - [X] resetLoginToken
+- [X] Add More Games
 - [ ] Logs
-- [ ] Add More Games
