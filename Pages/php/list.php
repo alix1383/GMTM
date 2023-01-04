@@ -13,7 +13,8 @@ $response = secure($res);
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Mono</th>
+                <!-- <th scope="col">Game</th> -->
+                <th scope="col">Memo</th>
                 <th scope="col">IS_expired</th>
                 <th scope="col">Token</th>
             </tr>
@@ -22,6 +23,7 @@ $response = secure($res);
         <tbody>
             <tr>
                 <th scope="row"><?= say($key)?></th>
+                <!-- <td class="font-monospace"><?= say($item['appid'])?></td> -->
                 <td class="font-monospace"><?= say($item['memo'])?></td>
                 <td
                     class="font-monospace <?= say(($item['is_expired'] == 1 ? "text-bg-danger" : "text-bg-success"))?> ">
