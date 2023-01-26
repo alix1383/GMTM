@@ -1,5 +1,5 @@
 <?php
-$json = file_get_contents(DATA . 'linux_compact.json');
+$json = file_get_contents(DATA . 'appids.json');
 $data = json_decode($json, true);
 ?>
 <form class="text-center display-6" method="GET">

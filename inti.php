@@ -14,6 +14,7 @@ define('Logger', '0');
 
 
 require INC . 'vendor/autoload.php';
+// require INC . 'Functions.php';
 require INC . 'Class.Rquest.php';
 require INC . 'Class.Input.php';
 
