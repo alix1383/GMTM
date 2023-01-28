@@ -1,4 +1,4 @@
-# GameServer(Steam)-Token-Manager #
+# Game Server Token Manager Steam #
 
 ![Deploy](https://github.com/alix1383/GM-Token-Manager/actions/workflows/Deploy.yml/badge.svg)
 
