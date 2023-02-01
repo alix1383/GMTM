@@ -23,11 +23,11 @@ require __DIR__ . '/inti.php';
             return;
         }
 
-        // $ValidateKey = $Request->verifyApiKey($Token);
-        // if (! $ValidateKey == true) {
-        //     echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
-        //     return;
-        // }
+        $validateKey = new Request($Token);
+        if (! $validateKey->verifyApiKey() == true) {
+            echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
+            return;
+        }
         
         $_SESSION['Token'] = $Token;
         echo "<meta http-equiv='refresh' content='0'>";
