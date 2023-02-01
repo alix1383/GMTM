@@ -3,6 +3,8 @@
 //! https://partner.steamgames.com/doc/webapi/IGameServersService
 // error_reporting(0);
 
+use Josantonius\Session\Facades\Session;
+
 define('ROOT', __DIR__);
 define('INC', ROOT . '/inc/');
 define('PAGE_TMPL_HTML', ROOT . '/Pages/Html/');
@@ -17,16 +19,19 @@ require INC . 'vendor/autoload.php';
 require INC . 'Functions.php';
 require INC . 'Class.Rquest.php';
 require INC . 'Class.Input.php';
+require INC . 'logger.php';
+
 
 $Input = new Input();
+$SESSION = new Session();
+
 $POST = $Input->post();
 $GET = $Input->get();
-$SESSION = $Input->session();
 $SERVER = $Input->server();
 
-
-if (isset($SESSION['Token'])) {
-    $Request = new Request($SESSION['Token']);
+$Tok = $SESSION->get('Token');
+if (isset($Tok)) {
+    $Request = new Request($Tok);
     include_once PAGE_TMPL_HTML . 'header.html';
 } 
 
@@ -43,17 +48,17 @@ if (isset($GET['gen'])) {
 }
 
 if (isset($GET['memo'])) {
-    echo '<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->genToken($GET['memo'], $GET['appid'])->login_token, ENT_QUOTES, "UTF-8") . '</p>';
+    echo '<p class="text-center display-6 text-success"> New Token Is: ' . htmlentities($Request->genToken($GET['memo'], $GET['appid'])->login_token . " Game : " .appIdtoName($GET['appid']), ENT_QUOTES, "UTF-8") . '</p>';
     if (Logger == 1) {
         $log->info(
             'New Token',
-            ['Api Key'            => $SESSION['Token'],
-                'Toekn Steam id'  => $GET['steamid'],
-                'Memo'            => $GET['memo'],
-                'New Token'       => $Request->genToken($GET['memo'])->login_token,
-                'IP'              => $SERVER['REMOTE_ADDR'],
-                'HTTP_USER_AGENT' => $SERVER['HTTP_USER_AGENT'],
-                'SERVER_PROTOCOL' => $SERVER['SERVER_PROTOCOL'],
+            ['Api Key'              => $Tok,
+                'Toekn Steam id'    => $GET['steamid'],
+                'Memo'              => $GET['memo'],
+                'New Token & appId' => $Request->genToken($GET['memo'], $GET['appid'])->login_token,
+                'IP'                => $SERVER['REMOTE_ADDR'],
+                'HTTP_USER_AGENT'   => $SERVER['HTTP_USER_AGENT'],
+                'SERVER_PROTOCOL'   => $SERVER['SERVER_PROTOCOL'],
             ]
         );
     }

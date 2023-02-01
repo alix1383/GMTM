@@ -8,10 +8,12 @@
 
 <!-- [![DeepSource](https://deepsource.io/gh/alix1383/GM-Token-Manager.svg/?label=active+issues&show_trend=true&token=v35qf177o-tU83Gn6-MjmzGp)](https://deepsource.io/gh/alix1383/GM-Token-Manager/?ref=repository-badge) -->
 
-Steam Game Server Token Manager
+Game Server Token Manager Steam
 
 `PHP >= 8.1` Require
 
+For Enable Logger Set `logger` to `1` in `inti.php L:15`
+
 - [X] resetLoginToken
 - [X] Add More Games
-- [ ] Logs
+- [X] Logs

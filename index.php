@@ -14,7 +14,7 @@ require __DIR__ . '/inti.php';
     <?php
     $Token = $Input->post('Token');
     
-    if (! isset($SESSION['Token'])) {
+    if (! isset($Tok)) {
         include_once PAGE_TMPL_HTML . 'form.html';
     }
     if (isset($Token)) {
@@ -23,13 +23,13 @@ require __DIR__ . '/inti.php';
             return;
         }
 
-        // $ValidateKey = $Request->verifyApiKey($Token);
-        // if (! $ValidateKey == true) {
-        //     echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
-        //     return;
-        // }
+        $validateKey = new Request($Token);
+        if (! $validateKey->verifyApiKey() == true) {
+            echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
+            return;
+        }
         
-        $_SESSION['Token'] = $Token;
+        $SESSION->set('Token', $Token);
         echo "<meta http-equiv='refresh' content='0'>";
         header('Location: ?list');
     }

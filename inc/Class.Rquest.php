@@ -2,6 +2,8 @@
 
 class Request
 {
+    public $requestUrl = 'https://api.steampowered.com/IGameServersService/';
+
     private $Client, $Apikey;
     /**
      * __construct
@@ -25,7 +27,7 @@ class Request
         $res = $this->Client;
         $result = $res->request(
             'GET',
-            "https://api.steampowered.com/IGameServersService/GetAccountList/v1/",
+            $this->requestUrl . "GetAccountList/v1/",
             [
                 'query' => ['key' => $this->Apikey],
             ]
@@ -45,7 +47,7 @@ class Request
             $res = $this->Client;
             $res->request(
                 'GET',
-                "https://api.steampowered.com/IGameServersService/GetAccountList/v1/",
+                $this->requestUrl . "GetAccountList/v1/",
                 [
                     'query' => ['key' => $this->Apikey],
                 ]
@@ -55,6 +57,7 @@ class Request
             return false;
         }
     }
+
     /**
      * Generate New TOken
      *
@@ -66,7 +69,7 @@ class Request
         $res = $this->Client;
         $result = $res->request(
             'POST',
-            "https://api.steampowered.com/IGameServersService/CreateAccount/v1/",
+            $this->requestUrl . "CreateAccount/v1/",
             [
                 'query' => ['key' => $this->Apikey, 'appid' => $appid, 'memo' => $Memo],
             ]
@@ -85,7 +88,7 @@ class Request
         $res = $this->Client;
         $result = $res->request(
             'POST',
-            "https://api.steampowered.com/IGameServersService/resetLoginToken/v1/",
+            $this->requestUrl . "resetLoginToken/v1/",
             [
                 'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
             ]
@@ -104,12 +107,13 @@ class Request
         $res = $this->Client;
         $res->request(
             'POST',
-            "https://api.steampowered.com/IGameServersService/DeleteAccount/v1/",
+            $this->requestUrl . "DeleteAccount/v1/",
             [
                 'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
             ]
         );
     }
+    
     /**
      * resetLoginToken function
      *
@@ -121,7 +125,7 @@ class Request
         $res = $this->Client;
         $result = $res->request(
             'POST',
-            "https://api.steampowered.com/IGameServersService/resetLoginToken/v1/",
+            $this->requestUrl . "resetLoginToken/v1/",
             [
                 'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
             ]
