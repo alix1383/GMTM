@@ -19,6 +19,7 @@ require INC . 'vendor/autoload.php';
 require INC . 'Functions.php';
 require INC . 'Class.Rquest.php';
 require INC . 'Class.Input.php';
+require INC . 'logger.php';
 
 
 $Input = new Input();
