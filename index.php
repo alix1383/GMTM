@@ -14,7 +14,7 @@ require __DIR__ . '/inti.php';
     <?php
     $Token = $Input->post('Token');
     
-    if (! isset($SESSION['Token'])) {
+    if (! isset($Tok)) {
         include_once PAGE_TMPL_HTML . 'form.html';
     }
     if (isset($Token)) {
@@ -29,7 +29,7 @@ require __DIR__ . '/inti.php';
             return;
         }
         
-        $_SESSION['Token'] = $Token;
+        $SESSION->set('Token', $Token);
         echo "<meta http-equiv='refresh' content='0'>";
         header('Location: ?list');
     }

@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($SESSION['Token']) && isset($GET['steamid'])) {
+if (!isset($Tok) && isset($GET['steamid'])) {
     echo 'something went wrong!';
     exit;
 }
@@ -12,7 +12,7 @@ if (Logger == 1) {
     $log->info(
         'Del Token',
         [
-            'api key'         => $SESSION['Token'],
+            'api key'         => $Tok,
             'Toekn Steam id'  => $GET['steamid'],
             'IP'              => $SERVER['REMOTE_ADDR'],
             'HTTP_USER_AGENT' => $SERVER['HTTP_USER_AGENT'],

@@ -13,8 +13,6 @@ class Input
         $this->post    = $_POST;
         $this->get     = $_GET;
         $this->server  = $_SERVER;
-        $this->session = $_SESSION;
-
     }
 
     public function post($key = null, $default = null)
@@ -30,11 +28,6 @@ class Input
     public function server($key = null, $default = null)
     {
         return $this->checkGlobal($this->server, $key, $default);
-    }
-
-    public function session($key = null, $default = null)
-    {
-        return $this->checkGlobal($this->session, $key, $default);
     }
 
     private function checkGlobal($global, $key = null, $default = null)
