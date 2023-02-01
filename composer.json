@@ -3,6 +3,8 @@
         "vendor-dir": "inc/vendor"
     },
     "require": {
-        "guzzlehttp/guzzle": "^7.5"
+        "guzzlehttp/guzzle": "^7.5",
+        "josantonius/session": "^2.0",
+        "monolog/monolog": "^3.2"
     }
 }
