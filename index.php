@@ -1,39 +1,12 @@
 <?php
+
+include_once 'init.php';
+include_once(INCLUDES_PATH . "/system-functions.php");
+include_once('config.php');
+include_once(INCLUDES_PATH . "/sb-callback.php");
+$xajax->processRequests();
 session_start();
-require __DIR__ . '/inti.php';
-?>
+include_once(INCLUDES_PATH . "/page-builder.php");
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <?php include PAGE_TMPL_HTML . 'head.html';?>
-</head>
-
-<body>
-    <?php
-    $Token = $Input->post('Token');
-    
-    if (! isset($Tok)) {
-        include_once PAGE_TMPL_HTML . 'form.html';
-    }
-    if (isset($Token)) {
-        if (!strlen($Token) == 32) {
-            echo '<p class="text-center display-6 text-danger ">Pls Enter valid Web api Key!!</p>';
-            return;
-        }
-
-        $validateKey = new Request($Token);
-        if (! $validateKey->verifyApiKey() == true) {
-            echo '<p class="text-center display-6 text-danger">Pls Enter valid Web api Key!!</p>';
-            return;
-        }
-        
-        $SESSION->set('Token', $Token);
-        echo "<meta http-equiv='refresh' content='0'>";
-        header('Location: ?list');
-    }
-?>
-</body>
-
-</html>
+$route = route(Config::get('config.defaultpage'));
+build($route[0], $route[1]);

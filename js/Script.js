@@ -1,1 +1,0 @@
-function CopyToClipboard(e){var o=document.createRange();o.selectNode(document.getElementById(e)),window.getSelection().removeAllRanges(),window.getSelection().addRange(o),document.execCommand("copy"),window.getSelection().removeAllRanges(),alert("Copied Token")}
