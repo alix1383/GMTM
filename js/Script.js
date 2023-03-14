@@ -1,1 +1,9 @@
-function CopyToClipboard(e){var o=document.createRange();o.selectNode(document.getElementById(e)),window.getSelection().removeAllRanges(),window.getSelection().addRange(o),document.execCommand("copy"),window.getSelection().removeAllRanges(),alert("Copied Token")}
+function CopyToClipboard(e) {
+  var range = document.createRange();
+  range.selectNode(document.getElementById(e));
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  alert("Copied Token");
+}
