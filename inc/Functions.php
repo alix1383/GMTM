@@ -1,4 +1,5 @@
-<?php
+// load the JSON file and store it in a global variable
+$appIds = json_decode(file_get_contents(DATA . 'appids.json'), true);
 
 function say(string $var = null)
 {
@@ -12,14 +13,11 @@ function secure($val)
 
 function appIdtoName(int $id)
 {
-    $json = file_get_contents(DATA . 'appids.json');
-    $data = json_decode($json, true);
-    for ($i = 0; $i < count($data); $i++) {
-        if ($data[$i]['APPiD'] == $id) {
-            return $data[$i]['SERVER_NAME'];
-            break;
-        } else {
-            return 'App id not found!!';
+    global $appIds;
+    foreach ($appIds as $app) {
+        if ($app['APPiD'] == $id) {
+            return $app['SERVER_NAME'];
         }
     }
+    return 'App id not found!!';
 }
