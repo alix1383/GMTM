@@ -1,3 +1,4 @@
+<?php
 // load the JSON file and store it in a global variable
 $appIds = json_decode(file_get_contents(DATA . 'appids.json'), true);
 
