@@ -15,15 +15,14 @@ if (!defined("IN_GMTM")) {
  * @param  string $onclick
  * @return string URL
  */
-function CreateLinkR($title, $url, $tooltip = "", $target = "_self", $wide = false, $onclick = "")
+function createLinkR(string $title, string $url, string $tooltip = "", string $target = "_self", bool $wide = false, string $onclick = ""): string
 {
-    $class = ($wide) ? "perm" : "tip";
+    $class = $wide ? "perm" : "tip";
+    $titleAttr = $tooltip ? "title='$tooltip'" : "";
 
-    if (strlen($tooltip) == 0) {
-        return "<a href='{$url}' onclick=\"{$onclick}\" target='{$target}'> {$title} </a>";
-    }
-    return "<a href='{$url}' class='{$class}' title='{$tooltip}' target='{$target}'> {$title} </a>";
+    return "<a href='$url' class='$class' $titleAttr target='$target' onclick='$onclick'>$title</a>";
 }
+
 
 /**
  * @param  string $text
