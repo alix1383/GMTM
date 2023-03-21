@@ -1,135 +1,128 @@
 <?php
 
+use GuzzleHttp\Client;
+
 class Request
 {
-    public $requestUrl = 'https://api.steampowered.com/IGameServersService/';
+    private $requestUrl = 'https://api.steampowered.com/IGameServersService/';
+    private $client;
+    private $apiKey;
 
-    private $Client, $Apikey;
-    /**
-     * __construct
-     *
-     * @param string $Apikey
-     */
-    public function __construct(string $Apikey)
+    public function __construct(string $apiKey)
     {
-        $Client = new GuzzleHttp\Client();
-        $this->Client = $Client;
-        $this->Apikey = $Apikey;
+        $this->client = new Client();
+        $this->apiKey = $apiKey;
     }
 
     /**
-     * Get Token List
+     * Get Token List.
      *
-     * @return array Token List
+     * @return array
      */
     public function getTokenList(): array
     {
-        $res = $this->Client;
-        $result = $res->request(
-            'GET',
-            $this->requestUrl . "GetAccountList/v1/",
-            [
-                'query' => ['key' => $this->Apikey],
-            ]
-        );
+        $response = $this->client->request('GET', $this->requestUrl . 'GetAccountList/v1/', [
+            'query' => [
+                'key' => $this->apiKey,
+            ],
+        ]);
 
-        return json_decode($result->getBody(), true)['response']['servers'];
+        return json_decode($response->getBody()->getContents(), true)['response']['servers'];
     }
 
     /**
-     * Validate Api
+     * Verify Api Key.
      *
-     * @return boolean
+     * @return bool
      */
     public function verifyApiKey(): bool
     {
         try {
-            $res = $this->Client;
-            $res->request(
-                'GET',
-                $this->requestUrl . "GetAccountList/v1/",
-                [
-                    'query' => ['key' => $this->Apikey],
-                ]
-            );
+            $this->client->request('GET', $this->requestUrl . 'GetAccountList/v1/', [
+                'query' => [
+                    'key' => $this->apiKey,
+                ],
+            ]);
+
             return true;
-        } catch (\Throwable) {
+        } catch (\Throwable $e) {
             return false;
         }
     }
 
     /**
-     * Generate New TOken
+     * Generate New Token.
      *
-     * @param string $Memo
-     * @return object login_token & steamid
+     * @param string $memo
+     * @param int $appId
+     *
+     * @return object
      */
-    public function genToken(string $Memo, int $appid): object
+    public function generateToken(string $memo, int $appId): object
     {
-        $res = $this->Client;
-        $result = $res->request(
-            'POST',
-            $this->requestUrl . "CreateAccount/v1/",
-            [
-                'query' => ['key' => $this->Apikey, 'appid' => $appid, 'memo' => $Memo],
-            ]
-        );
-        return json_decode($result->getBody())->response;
+        $response = $this->client->request('POST', $this->requestUrl . 'CreateAccount/v1/', [
+            'query' => [
+                'key' => $this->apiKey,
+                'appid' => $appId,
+                'memo' => $memo,
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents())->response;
     }
 
     /**
-     * Regenerate Token
+     * Regenerate Token.
      *
-     * @param integer $Steamid
-     * @return string New Token
+     * @param int $steamId
+     *
+     * @return string
      */
-    public function resetToken(int $Steamid): string
+    public function resetToken(int $steamId): string
     {
-        $res = $this->Client;
-        $result = $res->request(
-            'POST',
-            $this->requestUrl . "resetLoginToken/v1/",
-            [
-                'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
-            ]
-        );
-        return json_decode($result->getBody()->getContents())->response->login_token;
+        $response = $this->client->request('POST', $this->requestUrl . 'resetLoginToken/v1/', [
+            'query' => [
+                'key' => $this->apiKey,
+                'steamid' => $steamId,
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents())->response->login_token;
     }
 
     /**
-     * Undocumented function
+     * Delete Token.
      *
-     * @param integer $Steamid
+     * @param int $steamId
+     *
      * @return void
      */
-    public function deleteToken(int $Steamid): void
+    public function deleteToken(int $steamId): void
     {
-        $res = $this->Client;
-        $res->request(
-            'POST',
-            $this->requestUrl . "DeleteAccount/v1/",
-            [
-                'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
-            ]
-        );
+        $this->client->request('POST', $this->requestUrl . 'DeleteAccount/v1/', [
+            'query' => [
+                'key' => $this->apiKey,
+                'steamid' => $steamId,
+            ],
+        ]);
     }
-    
+
     /**
-     * resetLoginToken function
+     * Reset Login Token.
      *
-     * @param integer $Steamid
-     * @return string New Token
+     * @param int $steamId
+     *
+     * @return string
      */
-    public function resetLoginToken(int $Steamid): string
+    public function resetLoginToken(int $steamId): string
     {
-        $res = $this->Client;
-        $result = $res->request(
-            'POST',
-            $this->requestUrl . "resetLoginToken/v1/",
-            [
-                'query' => ['key' => $this->Apikey, 'steamid' => $Steamid],
-            ]
-        );
-        return json_decode($result->getBody())->response->login_token;
+        $response = $this->client->request('POST', $this->requestUrl . 'resetLoginToken/v1/', [
+            'query' => [
+                'key' => $this->apiKey,
+                'steamid' => $steamId,
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents())->response->login_token;
     }
 }
