@@ -1,7 +1,6 @@
 <?php
-
-define('IN_SB', true);
-
+define('IN_GMTM', true);
+$Template = 'Spark';
 
 //! Filter all user inputs
 $_GET = filter_input_array(
@@ -32,30 +31,39 @@ define('FUNCTIONS_PATH', INCLUDES_PATH . "Functions/");
 define('CLASS_PATH', INCLUDES_PATH . "Class/");
 
 define('DATA_PATH', ROOT . "data/");
-// define('ROOT', dirname(__FILE__) . "/");
+define('DATA', DATA_PATH . 'appids.json');
 
 // ---------------------------------------------------
 //  Are we installed?
 // ---------------------------------------------------
 
-#Composer autoload
+# Composer autoload
 if (!file_exists(INCLUDES_PATH . '/vendor/autoload.php')) {
-    die('Compose autoload not found! Run `composer install` in the root directory of your SourceBans++ installation.');
+    die('Compose autoload not found! Run `composer install` in the root directory of your GMTM installation.');
 }
+
+use Josantonius\Json\Json;
+
 require_once(INCLUDES_PATH . '/vendor/autoload.php');
+require_once(CLASS_PATH . 'Crypto.php');
+
+
+// ---------------------------------------------------
+//  smarty setup
+// ---------------------------------------------------
+
+$smarty = new Smarty();
+$smarty->setTemplateDir(ROOT . "template/$Template/");
+$smarty->setConfigDir(ROOT . "template/$Template/config");
+$smarty->setCompileDir(ROOT . 'smarty/compile/');
+$smarty->setCacheDir(ROOT . 'smarty/cache/');
 
 // ---------------------------------------------------
 //  Initial setup
 // ---------------------------------------------------
-require_once(CLASS_PATH . 'Crypto.php');
 
-// require_once(INCLUDES_PATH.'/auth/Auth.php');
-// require_once(INCLUDES_PATH.'/auth/Host.php');
+$version_json = new Json('version.json');
+$version = $version_json->get();
 
-// require_once(INCLUDES_PATH.'/CUserManager.php');
-// require_once(INCLUDES_PATH.'/AdminTabs.php');
-
-$version = @json_decode(file_get_contents(DATA_PATH . 'version.json'), true);
-define('GMTM_VERSION', $version['version'] ?? 'N/A');
-define('GMTM_BRANCH', $version['branch'] ?? 'N/A');
-define('GMTM_DEV', $version['dev'] ?? false);
+define('GMTM_VERSION', $version['GMTM_VERSION'] ?? 'N/A');
+define('GMTM_BRANCH', $version['GMTM_BRANCH'] ?? 'N/A');

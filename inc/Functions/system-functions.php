@@ -96,7 +96,7 @@ function appIdtoName(int $id)
     $data = new Json(DATA . 'appids.json');
     $data->get();
 
-    for ($i = 0; $i < count($data); $i++) {
+    for ($i = 0; $i < count(array($data)); $i++) {
         if ($data[$i]['APPiD'] == $id) {
             return $data[$i]['SERVER_NAME'];
             break;

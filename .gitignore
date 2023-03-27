@@ -1,3 +1,6 @@
 inc/vendor/
 logs/
+smarty/cache/
+smarty/compile/
+smarty/config/
 composer.lock

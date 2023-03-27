@@ -1,0 +1,25 @@
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #333 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #eee !important;
+}
+
+[data-theme="dark"] input,
+select {
+  background-color: rgba(238, 238, 238, 0.658) !important;
+}
+
+[data-theme="dark"] #txt-white {
+  color: rgba(238, 238, 238, 0.658) !important;
+}
