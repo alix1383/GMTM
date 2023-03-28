@@ -3,7 +3,7 @@
 if (!defined("IN_GMTM")) {
     die("You should not be here :/ . Only follow links!");
 }
-
+use Josantonius\Json\Json;
 /**
  * Creates an anchor tag, and adds tooltip code if needed
  *
@@ -93,8 +93,9 @@ function SecondsToString($sec, $textual = true)
 
 function appIdtoName(int $id)
 {
-    $data = new Json(DATA . 'appids.json');
-    $data->get();
+    
+    $json = new Json(ROOT . 'data/appids.json');
+    $data = $json->get();
 
     for ($i = 0; $i < count(array($data)); $i++) {
         if ($data[$i]['APPiD'] == $id) {

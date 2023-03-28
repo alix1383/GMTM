@@ -1,4 +1,8 @@
 <?php
+if (!defined("IN_GMTM")) {
+    die("You should not be here :/ . Only follow links!");
+}
+
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;

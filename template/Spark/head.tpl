@@ -1,7 +1,3 @@
-{* Smarty *}
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,12 +9,3 @@
     <link rel="stylesheet" href="./assets/Spark/css/style.css" />
     <link rel="stylesheet" href="./assets/Spark/css/dark-mode.css" />
 </head>
-
-<body>
-
-<p class="text-center display-6 text-danger">Pls Enter Valid Web Api Key!</p>
-
-
-</body>
-
-</html>

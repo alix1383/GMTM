@@ -30,8 +30,7 @@ define('INCLUDES_PATH', ROOT . "inc/");
 define('FUNCTIONS_PATH', INCLUDES_PATH . "Functions/");
 define('CLASS_PATH', INCLUDES_PATH . "Class/");
 
-define('DATA_PATH', ROOT . "data/");
-define('DATA', DATA_PATH . 'appids.json');
+
 
 // ---------------------------------------------------
 //  Are we installed?
@@ -44,9 +43,9 @@ if (!file_exists(INCLUDES_PATH . '/vendor/autoload.php')) {
 
 use Josantonius\Json\Json;
 
-require_once(INCLUDES_PATH . '/vendor/autoload.php');
-require_once(CLASS_PATH . 'Crypto.php');
-
+require_once INCLUDES_PATH . '/vendor/autoload.php';
+include_once FUNCTIONS_PATH . 'system-functions.php';
+$router = new \Bramus\Router\Router();
 
 // ---------------------------------------------------
 //  smarty setup

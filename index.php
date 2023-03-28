@@ -1,5 +1,16 @@
 <?php
 include_once 'init.php';
-$smarty->assign('test', 'test');
 
-$smarty->display('index.tpl');
+// $response = secure($Request->getTokenList());
+// $smarty->display('index.tpl');
+include_once INCLUDES_PATH . 'pages.php';
+
+
+
+
+$router->get('/123', function () {
+    echo 'AA';
+
+});
+
+$router->run();
