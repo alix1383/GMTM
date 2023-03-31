@@ -1,16 +1,29 @@
 <?php
 include_once 'init.php';
-
-// $response = secure($Request->getTokenList());
-// $smarty->display('index.tpl');
-include_once INCLUDES_PATH . 'pages.php';
-
+require_once INCLUDES_PATH . 'pages.php';
+// // $response = secure($Request->getTokenList());
+// // $smarty->display('index.tpl');
 
 
 
-$router->get('/123', function () {
-    echo 'AA';
+$session->start();
 
-});
+// if ($session->get('token') == null) {
+//     ob_start();
+//     header("Location: login");
+// }
 
-$router->run();
+// if ($session->get('token') == null) {
+//     ob_start();
+//     header("Location: list");
+//     exit;
+// } else {
+//     ob_start();
+//     header("Location: login");
+//     exit;
+// }
+
+
+
+
+// verify('156');

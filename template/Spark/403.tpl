@@ -1,4 +1,5 @@
-{* BY https://github.com/dr5hn/403 *}
+{* Smarty *}
+<!-- BY https://github.com/dr5hn/403 -->
 <!DOCTYPE html>
 <html lang="en">
 

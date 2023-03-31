@@ -15,4 +15,4 @@
     </li>
   </ul>
 </div>
-<script src="./js/dark-mode-switch.min.js"></script>
+<script src="./assets/Spark/js/dark-mode-switch.min.js"></script>

@@ -1,12 +1,8 @@
 <?php
 
-if (!defined("IN_GMTM")) {
-    die("You should not be here :/ . Only follow links!");
-}
-
 use GuzzleHttp\Client;
 
-class Request
+class steamAPI
 {
     private $requestUrl = 'https://api.steampowered.com/IGameServersService/';
     private $client;

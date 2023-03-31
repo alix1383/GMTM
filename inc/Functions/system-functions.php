@@ -1,9 +1,7 @@
 <?php
 
-if (!defined("IN_GMTM")) {
-    die("You should not be here :/ . Only follow links!");
-}
 use Josantonius\Json\Json;
+
 /**
  * Creates an anchor tag, and adds tooltip code if needed
  *
@@ -93,16 +91,44 @@ function SecondsToString($sec, $textual = true)
 
 function appIdtoName(int $id)
 {
-    
     $json = new Json(ROOT . 'data/appids.json');
     $data = $json->get();
 
-    for ($i = 0; $i < count(array($data)); $i++) {
-        if ($data[$i]['APPiD'] == $id) {
-            return $data[$i]['SERVER_NAME'];
-            break;
+    foreach ($data as $app) {
+        if ($app['APPiD'] == $id) {
+            return $app['SERVER_NAME'];
+        }
+    }
+
+    return 'App id not found!!';
+}
+
+
+// function logIN(string $apikey)
+// {
+//     $token;
+//     $Request = new Request($apikey)
+// }
+
+
+function verify($key)
+{
+    $session = new Josantonius\Session\Session();
+    $token = $key;
+    if (isset($token)) {
+        if (strlen($token) != 32) {
+            header('Location: login?error=0');
         } else {
-            return 'App id not found!!';
+            $steamAPI = new steamAPI($token);
+            if (!$steamAPI->verifyApiKey() === true) {
+                header('Location: login?error=0');
+                exit;
+            } else {
+                $session->start();
+                $session->set('token', $token);
+                header('Location: list');
+                exit;
+            }
         }
     }
 }

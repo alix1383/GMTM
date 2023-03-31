@@ -44,8 +44,13 @@ if (!file_exists(INCLUDES_PATH . '/vendor/autoload.php')) {
 use Josantonius\Json\Json;
 
 require_once INCLUDES_PATH . '/vendor/autoload.php';
-include_once FUNCTIONS_PATH . 'system-functions.php';
+
+require_once CLASS_PATH . 'steamAPI.php';
+require_once FUNCTIONS_PATH . 'system-functions.php';
+
 $router = new \Bramus\Router\Router();
+$session = new Josantonius\Session\Session();
+// 
 
 // ---------------------------------------------------
 //  smarty setup
