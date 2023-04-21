@@ -18,4 +18,4 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /gmtm.ali-x.ir/
+          server-dir: /public_html/gmtm/
