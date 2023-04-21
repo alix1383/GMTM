@@ -2,7 +2,8 @@ name: 🚀 Deploy website
 
 on:
   push:
-    tags: '*'
+#    tags: '*'
+    branches: [ "main" ]
 
 jobs:
   web-deploy:
