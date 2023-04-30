@@ -40,8 +40,9 @@ switch (getCurrentUri()) {
     case '/action':
         $token = $_SESSION['token'];
         $steamAPI = new steamAPI($token);
-        
-        switch ($_GET['a']) {
+        $action = $_GET['a'];
+
+        switch ($action) {
             case 'remove':
                 $steamId = $_GET['steamId'];
                 $steamAPI->deleteToken($steamId);
