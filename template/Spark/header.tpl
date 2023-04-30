@@ -5,14 +5,14 @@
   </div>
   <ul class="text-center display-5">
     <li class="list-inline-item">
-      <a class="nav-link text-xs-center" href="">List</a>
+      <a class="nav-link text-xs-center" href="list">List</a>
     </li>
     <li class="list-inline-item">
-      <a class="nav-link text-xs-center p-md-2" href="">Cerate</a>
+      <a class="nav-link text-xs-center p-md-2" href="action?a=create">Create</a>
     </li>
     <li class="list-inline-item">
-      <a class="nav-link text-xs-center" href="">Logout</a>
+      <a class="nav-link text-xs-center" href="logout">Logout</a>
     </li>
   </ul>
 </div>
-<script src="./assets/Spark/js/dark-mode-switch.min.js"></script>
+<script src="./template/Spark/assets/js/dark-mode-switch.min.js"></script>

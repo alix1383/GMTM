@@ -1,40 +1,71 @@
 <?php
-global $appidtoName;
+global $appidtoName, $dataToArray;
 
+switch (getCurrentUri()) {
+    case '/':
+        if ($_SESSION['token'] != null) {
+            header("Location: list");
+            exit;
+        } else {
+            header("Location: login");
+            exit;
+        }
+        break;
 
-
-// $router->get('/login', function (){
-
-// });
-
-switch ($router->getCurrentUri()) {
     case "/login":
         $smarty->display('login.tpl');
-        $router->run();
         break;
 
     case '/list';
-        $steamAPI = new steamAPI($session->get('token'));
+        session_start();
+        $token = $_SESSION['token'];
+        $steamAPI = new steamAPI($token);
+        $list = $steamAPI->getTokenList();
         $smarty->assign([
             'appidtoName' => $appidtoName,
-            'steamAPI' => $steamAPI
+            'List' => $list
         ]);
-        $smarty->assign('appidtoName', $appidtoName);
         $smarty->display('list.tpl');
-        $router->run();
         break;
 
     case '/verify';
-        $router->post('/verify', verify($_POST['apikey']));
-        $router->run();
+        verify($_POST['apikey']);
         break;
 
     case '/logout';
-        $session->destroy();
+        session_destroy();
         header('Location: login');
         exit;
-        break;
 
+    case '/action':
+        $token = $_SESSION['token'];
+        $steamAPI = new steamAPI($token);
+        
+        switch ($_GET['a']) {
+            case 'remove':
+                $steamId = $_GET['steamId'];
+                $steamAPI->deleteToken($steamId);
+                header("Location: list");
+                exit;
+            case 'renew':
+                $steamId = $_GET['steamId'];
+                $steamAPI->resetLoginToken($steamId);
+                header("Location: list");
+                exit;
+            case 'create':
+                $smarty->assign('dataToArray', $dataToArray);
+                $smarty->display('create.tpl');
+                break;
+        }
+        break;
+    case '/create':
+        $token = $_SESSION['token'];
+        $steamAPI = new steamAPI($token);
+        $appId = $_GET['appid'];
+        $memo = $_GET['memo'];
+        $steamAPI->generateToken($memo, $appId);
+        header("Location: list");
+        exit;
     default:
         $smarty->display('403.tpl');
 }

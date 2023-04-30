@@ -72,25 +72,6 @@ class steamAPI
     }
 
     /**
-     * Regenerate Token.
-     *
-     * @param int $steamId
-     *
-     * @return string
-     */
-    public function resetToken(int $steamId): string
-    {
-        $response = $this->client->request('POST', $this->requestUrl . 'resetLoginToken/v1/', [
-            'query' => [
-                'key' => $this->apiKey,
-                'steamid' => $steamId,
-            ],
-        ]);
-
-        return json_decode($response->getBody()->getContents())->response->login_token;
-    }
-
-    /**
      * Delete Token.
      *
      * @param int $steamId

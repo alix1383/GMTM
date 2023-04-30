@@ -1,8 +1,14 @@
 <?php
 define('IN_GMTM', true);
+error_reporting(E_ALL ^ E_NOTICE); 
+
 $Template = 'Spark';
 
+
+//! ---------------------------------------------------
 //! Filter all user inputs
+//! ---------------------------------------------------
+
 $_GET = filter_input_array(
     INPUT_GET,
     FILTER_SANITIZE_SPECIAL_CHARS
@@ -20,23 +26,21 @@ $_SERVER = filter_input_array(
     FILTER_SANITIZE_SPECIAL_CHARS
 );
 
-
 //! ---------------------------------------------------
 //!  Directories
 //! ---------------------------------------------------
+
 define('ROOT', dirname(__FILE__) . "/");
 
 define('INCLUDES_PATH', ROOT . "inc/");
 define('FUNCTIONS_PATH', INCLUDES_PATH . "Functions/");
 define('CLASS_PATH', INCLUDES_PATH . "Class/");
 
+//! ---------------------------------------------------
+//!  Are we installed?
+//! ---------------------------------------------------
 
-
-// ---------------------------------------------------
-//  Are we installed?
-// ---------------------------------------------------
-
-# Composer autoload
+//? Composer autoload
 if (!file_exists(INCLUDES_PATH . '/vendor/autoload.php')) {
     die('Compose autoload not found! Run `composer install` in the root directory of your GMTM installation.');
 }
@@ -48,13 +52,9 @@ require_once INCLUDES_PATH . '/vendor/autoload.php';
 require_once CLASS_PATH . 'steamAPI.php';
 require_once FUNCTIONS_PATH . 'system-functions.php';
 
-$router = new \Bramus\Router\Router();
-$session = new Josantonius\Session\Session();
-// 
-
-// ---------------------------------------------------
-//  smarty setup
-// ---------------------------------------------------
+//! ---------------------------------------------------
+//!  smarty setup
+//! ---------------------------------------------------
 
 $smarty = new Smarty();
 $smarty->setTemplateDir(ROOT . "template/$Template/");
@@ -62,12 +62,13 @@ $smarty->setConfigDir(ROOT . "template/$Template/config");
 $smarty->setCompileDir(ROOT . 'smarty/compile/');
 $smarty->setCacheDir(ROOT . 'smarty/cache/');
 
-// ---------------------------------------------------
-//  Initial setup
-// ---------------------------------------------------
+//! ---------------------------------------------------
+//!  Initial setup
+//! ---------------------------------------------------
 
 $version_json = new Json('version.json');
 $version = $version_json->get();
 
 define('GMTM_VERSION', $version['GMTM_VERSION'] ?? 'N/A');
+define('GMTM_VERSION_CODENAME', $version['GMTM_BRANCH'] ?? 'N/A');
 define('GMTM_BRANCH', $version['GMTM_BRANCH'] ?? 'N/A');

@@ -4,11 +4,8 @@
     },
     "require": {
         "guzzlehttp/guzzle": "^7.5",
-        "josantonius/session": "^2.0",
         "monolog/monolog": "^3.2",
         "smarty/smarty": "^4.3",
-        "defuse/php-encryption": "^2.3",
-        "bramus/router": "^1.6",
         "josantonius/json": "^2.0",
         "phpseclib/phpseclib": "^3.0"
     }

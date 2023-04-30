@@ -11,7 +11,7 @@
     <input type="checkbox" class="form-check-input" id="darkSwitch" />
     <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
   </div>
-  <script src="./assets/Spark/js/dark-mode-switch.min.js"></script>
+  <script src="./template/Spark/assets/js/dark-mode-switch.min.js"></script>
   <form class="text-center display-6" action="verify" method="POST">
     <div class="mb-3">
       <label for="apikey" class="form-label d-block">Steam Web Api Key</label>
@@ -23,5 +23,4 @@
     <p class="text-center display-6 text-danger">Please enter a valid Web API key.</p>
   {/if}
 </body>
-
 </html>
