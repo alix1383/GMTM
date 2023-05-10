@@ -10,9 +10,13 @@
   {include 'header.tpl'}
   <form class="text-center display-6" action="create" method="GET">
     <div class="mb-3">
-      <label for="memo" class="form-label d-block">Memo(Token Name)</label>
-      <input type="text" class="form-control w-75 d-inline-block" name="memo" />
-      <select name="appid" id="appid" class="form-control w-50 d-inline-block form-select-lg m-sm-2">
+      {* <label for="memo" class="form-label d-block">Memo(Token Name)</label> *}
+      <input type="text" placeholder="Memo(Token Name)" class="form-control w-75 d-inline-block" name="memo" />
+
+      {* <label for="memo" class="form-label d-block">Count</label> *}
+      <input type="number" placeholder="Count" class="form-control w-25 d-inline-block" name="count" />
+
+      <select name="appid" id="appid" class="form-control w-25 d-inline-block form-select-lg m-sm-2">
         <option value="">-- Select Game --</option>
         {foreach dataToArray() as $itemvar}
           <option name="appid" value="{$itemvar['APPiD']}">

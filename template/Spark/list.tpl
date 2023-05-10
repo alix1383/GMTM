@@ -5,6 +5,7 @@
 
 <head>
     {include 'head.tpl'}
+    <script src="./template/Spark/assets/js/Script.js"></script>
 </head>
 
 <body>
@@ -38,11 +39,11 @@
                         class="font-monospace {if {$item['is_expired']} == true} text-bg-danger {else} text-bg-success {/if}">
                         {if {$item['is_expired']} == true} YES {else} NO {/if}
                     </td>
-                    <td class="font-monospace" id="1">
+                    <td class="font-monospace" id="{$key}">
                         {$item['login_token']}
                     </td>
                     <td class="col-2">
-                        <button onclick="CopyToClipboard(1)" class="p-m-1 btn btn-outline-dark" type="submit">
+                        <button onclick="CopyToClipboard({$key})" class="p-m-1 btn btn-outline-dark" type="submit">
                             Copy Token
                         </button>
                         <a href="action?a=remove&steamId={$item['steamid']}">

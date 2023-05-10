@@ -16,3 +16,4 @@
   </ul>
 </div>
 <script src="./template/Spark/assets/js/dark-mode-switch.min.js"></script>
+<hr>

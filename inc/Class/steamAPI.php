@@ -19,15 +19,20 @@ class steamAPI
      *
      * @return array
      */
-    public function getTokenList(): array
+    public function getTokenList()
     {
         $response = $this->client->request('GET', $this->requestUrl . 'GetAccountList/v1/', [
             'query' => [
                 'key' => $this->apiKey,
             ],
         ]);
+        $data = json_decode($response->getBody()->getContents(), true);
 
-        return json_decode($response->getBody()->getContents(), true)['response']['servers'];
+        if (isset($data['response']['servers'])) {
+            return json_decode($response->getBody()->getContents(), true)['response']['servers'];
+        } else {
+            return null;
+        }
     }
 
     /**

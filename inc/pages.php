@@ -62,9 +62,19 @@ switch (getCurrentUri()) {
     case '/create':
         $token = $_SESSION['token'];
         $steamAPI = new steamAPI($token);
+
         $appId = $_GET['appid'];
         $memo = $_GET['memo'];
-        $steamAPI->generateToken($memo, $appId);
+        $count = $_GET['count'];
+
+        if (isset($count) && $count <= 30) {
+            for ($i = 0; $i < $count; $i++) {
+                $steamAPI->generateToken($memo . " " . $i, $appId);
+            }
+        } else {
+            $steamAPI->generateToken($memo, $appId);
+        }
+
         header("Location: list");
         exit;
     default:
