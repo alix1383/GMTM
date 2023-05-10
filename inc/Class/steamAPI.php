@@ -29,7 +29,7 @@ class steamAPI
         $data = json_decode($response->getBody()->getContents(), true);
 
         if (isset($data['response']['servers'])) {
-            return json_decode($response->getBody()->getContents(), true)['response']['servers'];
+            return $data['response']['servers'];
         } else {
             return null;
         }
