@@ -1,3 +1,8 @@
 abbr[title] {
   text-decoration: overline;
 }
+
+#copyToken {
+  background-color: rgb(83, 0, 160) !important;
+  color: rgb(0, 182, 9) !important;
+}
