@@ -43,16 +43,16 @@
                         {$item['login_token']}
                     </td>
                     <td class="col-2">
-                        <button onclick="CopyToClipboard({$key})" class="p-m-1 btn btn-outline-dark" type="submit">
+                        <button onclick="CopyToClipboard({$key})" class="p-m-3 m-1 btn" id="copyToken" type="submit">
                             Copy Token
                         </button>
                         <a href="action?a=remove&steamId={$item['steamid']}">
-                            <button class="p-m-1 btn btn-warning link-danger" type="submit">
+                            <button class="p-m-3 m-1 btn btn-warning link-danger" type="submit">
                                 Delete
                             </button>
                         </a>
                         <a href="action?a=renew&steamId={$item['steamid']}">
-                            <button class="p-m-1 btn btn-dark link-success" type="submit">
+                            <button class="p-m-3 m-1 btn btn-dark link-success" type="submit">
                                 Regenerate
                             </button>
                         </a>

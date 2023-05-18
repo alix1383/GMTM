@@ -15,11 +15,16 @@
   background-color: #eee !important;
 }
 
-[data-theme="dark"] input,
-select {
+[data-theme="dark"] input, select
+ {
   background-color: rgba(238, 238, 238, 0.658) !important;
 }
 
 [data-theme="dark"] #txt-white {
   color: rgba(238, 238, 238, 0.658) !important;
+}
+
+[data-theme="dark"] #copyToken {
+  background-color: rgb(83, 0, 160) !important;
+  color: rgb(0, 182, 9) !important;
 }
