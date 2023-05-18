@@ -2,7 +2,8 @@ name: 🚀 Deploy
 
 on:
   push:
-    tags: "V*"
+      branches:
+      - main
 
 jobs:
   web-deploy:
