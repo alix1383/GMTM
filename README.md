@@ -10,10 +10,9 @@
 
 Game Server Token Manager Steam
 
-`PHP >= 8.1` Require
+`PHP 8.* And composer` Require
 
 For Enable Logger Set `logger` to `1` in `inti.php L:15`
 
-- [X] resetLoginToken
-- [X] Add More Games
-- [X] Logs
+- [] Add More Games
+- [] Logs
