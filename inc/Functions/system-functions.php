@@ -110,6 +110,7 @@ function verify($key)
     if (isset($token)) {
         if (strlen($token) != 32) {
             header('Location: login?error=0');
+            exit;
         } else {
             $steamAPI = new steamAPI($token);
             if (!$steamAPI->verifyApiKey() === true) {
