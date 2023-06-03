@@ -14,5 +14,5 @@ Game Server Token Manager Steam
 
 For Enable Logger Set `logger` to `1` in `inti.php L:15`
 
-- [] Add More Games
-- [] Logs
+- [ ] Add More Games
+- [ ] Logs
