@@ -18,6 +18,12 @@ switch (getCurrentUri()) {
 
     case '/list';
         session_start();
+
+        if ($_SESSION['token'] == null) {
+            header("Location: login");
+            exit;
+        }
+
         $token = $_SESSION['token'];
         $steamAPI = new steamAPI($token);
         $list = $steamAPI->getTokenList();
