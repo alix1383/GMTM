@@ -74,8 +74,8 @@ switch (getCurrentUri()) {
         $count = $_GET['count'];
 
         if ($count <= 15) {
-            for ($i = 1; $i < $count; $i++) {
-                $steamAPI->generateToken($memo . " " . $i, $appId);
+            for ($i = 0; $i < $count; $i++) {
+                $steamAPI->generateToken($memo . "-" . $i, $appId);
             }
         } else {
             $steamAPI->generateToken($memo, $appId);
