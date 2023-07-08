@@ -14,10 +14,9 @@
       <input type="text" placeholder="Memo(Token Name)" class="form-control w-75 d-inline-block" name="memo" />
 
       {* <label for="memo" class="form-label d-block">Count</label> *}
-      <input type="number" placeholder="Count" class="form-control w-25 d-inline-block" name="count" />
+      <input type="number" value="1" placeholder="Count" class="form-control w-25 d-inline-block" name="count" />
 
       <select name="appid" id="appid" class="form-control w-25 d-inline-block form-select-lg m-sm-2">
-        <option value="">-- Select Game --</option>
         {foreach dataToArray() as $itemvar}
           <option name="appid" value="{$itemvar['APPiD']}">
             {$itemvar['SERVER_NAME']} ({$itemvar['APPiD']})
