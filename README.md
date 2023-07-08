@@ -1,6 +1,6 @@
 # Game Server Token Manager Steam
 
-## Games Support :
+## Supported Games :
  - CSGO
  - TF2 
  - if you want add moore games open issues
